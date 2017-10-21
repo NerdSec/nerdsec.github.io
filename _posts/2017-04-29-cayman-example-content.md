@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Example content"
+categories: python
+tags: linux
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
