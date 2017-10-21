@@ -63,6 +63,17 @@
           <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
         {% endif %}
       {% endif %}
+      
+      {% if post %}
+        {% assign categories = post.categories %}
+      {% else %}
+        {% assign categories = page.categories %}
+      {% endif %}
+      {% for category in categories %}
+        <a href="{{site.baseurl}}/categories/#{{category|slugize}}" class="btn">{{category}}</a>
+      {% unless forloop.last %}&nbsp;{% endunless %}
+      {% endfor %}	
+      
       <!-- Post tagline -->
       {% if page.layout == 'post' %}
         <h2 class="project-date">
@@ -74,6 +85,7 @@
         {% if page_author %}
           • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page_author }}</span></span>
         {% endif %}
+        
         </h2>
       {% endif %}
       <!-- End: Post tagline -->
