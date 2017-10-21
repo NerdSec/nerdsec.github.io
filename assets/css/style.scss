@@ -1,0 +1,22 @@
+---
+---
+$code-bg-color: black;
+$section-headings-color: #f2b632;
+$body-text-color: #b5b5b7;
+$blockquote-text-color: white;
+
+@import 'jekyll-theme-cayman-blog';
+
+body {
+      background-color: #252839;
+}
+
+.site-nav a {
+    text-align: center;
+    text-decoration: none;
+}
+
+.site-nav a:hover {
+    color: white;
+    text-decoration: none;
+}
