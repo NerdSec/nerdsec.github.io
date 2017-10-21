@@ -371,6 +371,8 @@ a:hover { text-decoration: underline; }
 @media screen and (min-width: 42em) and (max-width: 64em) { .site-footer .my-svg-icon { width: 32px; height: 32px; } }
 @media screen and (max-width: 42em) { .site-footer .my-svg-icon { width: 36px; height: 36px; } }
 
+a:hover { text-decoration: none; color: #15965A; }
+
 body { background-color: #252839; }
 
 .site-nav a { text-align: center; text-decoration: none; }
@@ -401,6 +403,6 @@ body { background-color: #252839; }
 
 .l:hover { color: #fff; background-color: #0077b5; }
 
-.e { color: #444444; }
+.e { color: #b5b5b7; }
 
 .e:hover { color: #fff; background-color: #444444; }

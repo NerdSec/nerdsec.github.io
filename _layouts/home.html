@@ -19,6 +19,21 @@ layout: default
 
         <h2>
           <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}">{{ post.title | escape }}</a>
+
+<h4>
+  {% if post %}
+    {% assign tags = post.tags %}
+  {% else %}
+    {% assign tags = page.tags %}
+  {% endif %}
+  {% for tag in tags %}
+  <span class="share-box"> 
+  <a href="{{site.baseurl}}/tags/#{{tag|slugize}}" class="t">{{tag}}</a>
+  </span>
+  {% unless forloop.last %}&nbsp;{% endunless %}
+  {% endfor %}
+</h4>
+
         </h2>
 
         <span>{{ post.excerpt | markdownify | truncatewords: 30 }}</span>
