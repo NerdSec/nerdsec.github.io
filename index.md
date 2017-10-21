@@ -10,8 +10,22 @@ layout: home
 
 Cayman Blog Theme is a clean, responsive blogging theme for Jekyll, with social features. It is inspired by the Cayman Theme for Github Pages, which can be greatly used for single projects but not as blogging platform.
 
-This theme has instead all you need to start today blogging with Jekyll, and no effort: pages, posts, few social buttons. Try loading this on mobile too.
+<p align="center">
+  <b>Some Links:</b><br>
+  <d href="#"><img src="assets/images/python.png"></d>  
+  <d href="#"><img src="assets/images/elk.png"></d> 
+  <d href="#"><img src="assets/images/security.png"></d>
+  <br><br>
+</p>
 
-Have a look at the Github page for more information.
+<p align="center">
+  <b>Some Links:</b><br>
+  <a href="#"><img src="http://s.4cdn.org/image/title/105.gif"></a>  
+  <a href="#"><img src="https://www.premierleague.com/resources/ver/i/default-thumbnails/t8.png"></a> 
+  <a href="#">Link 3</a>
+  <br><br>
+</p>
+
+![about](assets/images/python.png)
 
 You find this descriptive text in the `index.md` file, so you can change it, or remove it completely, according to your needs.
