@@ -331,9 +331,9 @@ a:hover { text-decoration: underline; }
 .main-content img { max-width: 100%; }
 .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 { margin-top: 2rem; margin-bottom: 1rem; font-weight: normal; color: #f2b632; }
 .main-content p { margin-bottom: 1em; }
-.main-content code { padding: 2px 4px; font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; font-size: 0.9rem; color: #567482; background-color: black; border-radius: 0.3rem; }
-.main-content pre { padding: 0.8rem; margin-top: 0; margin-bottom: 1rem; font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace; color: #567482; word-wrap: normal; background-color: black; border: solid 1px #dce6f0; border-radius: 0.3rem; }
-.main-content pre > code { padding: 0; margin: 0; font-size: 0.9rem; color: #567482; word-break: normal; white-space: pre; background: transparent; border: 0; }
+.main-content code { padding: 2px 4px; font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; font-size: 0.9rem; color: white; background-color: black; border-radius: 0.3rem; }
+.main-content pre { padding: 0.8rem; margin-top: 0; margin-bottom: 1rem; font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace; color: white; word-wrap: normal; background-color: black; border: solid 1px #dce6f0; border-radius: 0.3rem; }
+.main-content pre > code { padding: 0; margin: 0; font-size: 0.9rem; color: white; word-break: normal; white-space: pre; background: transparent; border: 0; }
 .main-content .highlight { margin-bottom: 1rem; }
 .main-content .highlight pre { margin-bottom: 0; word-break: normal; }
 .main-content .highlight pre, .main-content pre { padding: 0.8rem; overflow: auto; font-size: 0.9rem; line-height: 1.45; border-radius: 0.3rem; -webkit-overflow-scrolling: touch; }
@@ -406,3 +406,49 @@ body { background-color: #252839; }
 .e { color: #b5b5b7; }
 
 .e:hover { color: #fff; background-color: #444444; }
+
+.highlight .err { color: #151515; background-color: #ac4142; }
+
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs { color: #888; }
+
+.highlight .cp { color: #f4bf75; }
+
+.highlight .nt { color: #f4bf75; }
+
+.highlight .o, .highlight .ow { color: #d0d0d0; }
+
+.highlight .p, .highlight .pi { color: #d0d0d0; }
+
+.highlight .gi { color: #90a959; }
+
+.highlight .gd { color: #ac4142; }
+
+.highlight .gh { color: #6a9fb5; font-weight: bold; }
+
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv { color: #aa759f; }
+
+.highlight .kc { color: #d28445; }
+
+.highlight .kt { color: #d28445; }
+
+.highlight .kd { color: #d28445; }
+
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 { color: #90a959; }
+
+.highlight .sr { color: #75b5aa; }
+
+.highlight .si { color: #8f5536; }
+
+.highlight .se { color: #8f5536; }
+
+.highlight .nn { color: #f4bf75; }
+
+.highlight .nc { color: #f4bf75; }
+
+.highlight .no { color: #f4bf75; }
+
+.highlight .na { color: #6a9fb5; }
+
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx { color: #90a959; }
+
+.highlight .ss { color: #90a959; }
