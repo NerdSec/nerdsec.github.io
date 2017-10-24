@@ -25,7 +25,7 @@ This course will take you through the basic topics in the following order:
     * while Loops
     * range()
 * [List comprehension](#list-comprehension)
-* [Functions](#functions)
+* [Functions](#fun+++++ctions)
 * [Lambda expressions](#lambda-expressions)
 * [Map and filter](#map-and-filter)
 * [Methods](#methods)
@@ -350,76 +350,60 @@ True
 
 Condition statements in python help in deciding the workflow of the program. They enable us to take decisions and process the data the way we want it to. Let's see the basic conditions supported by python.
 
-> Python is very sensitive to indentation. Always ensure that your code is indented properly, so that the python binary understands and interprets the code blocks correctly.:octocat:
+> Python is very sensitive to indentation. Always ensure that your code is indented properly, so that the python understands and interprets the code blocks correctly.:octocat:
 
 ### if,elif, else Statements
 
+All code in python works based on indentation. There are no brackets specified to understand a block of code. Below are some examples of some if-else type of conditions.
 
 ```python
 if 1 < 2:
     print('Yep!')
-```
-
-    Yep!
-
+#Output
+Yep!
 
 
-```python
 if 1 < 2:
     print('yep!')
-```
-
-    yep!
-
+#Output
+yep!
 
 
-```python
 if 1 < 2:
     print('first')
 else:
     print('last')
-```
-
-    first
-
+#Output
+first
 
 
-```python
 if 1 > 2:
     print('first')
 else:
     print('last')
-```
-
-    last
-
+#Output
+last
 
 
-```python
 if 1 == 2:
     print('first')
 elif 3 == 3:
     print('middle')
 else:
     print('Last')
+#Output
+middle
 ```
-
-    middle
-
 
 ### for Loops
 
+For loops are traditionally used when you have a block of code which you want to repeat a fixed number of times. The Python for statement iterates over the members of a sequence in order, executing the block each time.
 
 ```python
 seq = [1,2,3,4,5]
-```
-
-
-```python
 for item in seq:
     print(item)
-```
-
+#Output
     1
     2
     3
@@ -428,118 +412,62 @@ for item in seq:
 
 
 
-```python
+#New loop
 for item in seq:
     print('Yep')
+
+#Output
+    Yep
+    Yep
+    Yep
+    Yep
+    Yep
 ```
-
-    Yep
-    Yep
-    Yep
-    Yep
-    Yep
-
 
 
 ```python
 for jelly in seq:
     print(jelly+jelly)
-```
-
+#Output
     2
     4
     6
     8
     10
-
+```
 
 ### while Loops
 
+While loops, like the ForLoop, are used for repeating sections of code - but unlike a for loop, the while loop will not run n times, but until a defined condition is no longer met. If the condition is initially false, the loop body will not be executed at all.
 
 ```python
 i = 1
 while i < 5:
     print('i is: {}'.format(i))
     i = i+1
-```
-
+#Output
     i is: 1
     i is: 2
     i is: 3
     i is: 4
-
-
-### range()
-
-
-```python
-range(5)
 ```
-
-
-
-
-    range(0, 5)
-
-
-
-
-```python
-for i in range(5):
-    print(i)
-```
-
-    0
-    1
-    2
-    3
-    4
-
-
-
-```python
-list(range(5))
-```
-
-
-
-
-    [0, 1, 2, 3, 4]
-
-
 
 ## List comprehension
 
+List comprehensions provide a concise way to create lists. Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence or iterable, or to create a subsequence of those elements that satisfy a certain condition.
 
 ```python
 x = [1,2,3,4]
-```
-
-
-```python
 out = []
 for item in x:
     out.append(item**2)
 print(out)
+#Output
+[1, 4, 9, 16]
 ```
-
-    [1, 4, 9, 16]
-
-
-
-```python
-[item**2 for item in x]
-```
-
-
-
-
-    [1, 4, 9, 16]
-
-
 
 ## Functions
-
+Functions are a convenient way to divide your code into useful blocks, allowing us to order our code, make it more readable, reuse it and save some time. Also functions are a key way to define interfaces so programmers can share their code.
 
 ```python
 def my_func(param1='default'):
@@ -548,160 +476,54 @@ def my_func(param1='default'):
     """
     print(param1)
 ```
-
+We defined a function called my_func in the above block of coce. Let's call this function.
 
 ```python
 my_func
+#Output
+<function __main__.my_func>
 ```
 
-
-
-
-    <function __main__.my_func>
-
-
-
+Please notice that we dod not pass the `()` brackets around our function name. This resulted in printing out the datatype of `my_func`.
 
 ```python
 my_func()
+#Output
+default
 ```
-
-    default
-
-
 
 ```python
 my_func('new param')
+#Output
+new param
 ```
-
-    new param
-
-
-
-```python
-my_func(param1='new param')
-```
-
-    new param
-
-
 
 ```python
 def square(x):
     return x**2
-```
 
-
-```python
 out = square(2)
-```
-
-
-```python
 print(out)
+#Output
+4
 ```
-
-    4
-
 
 ## Lambda expressions
 
+Python supports the creation of anonymous functions (i.e. functions that are not bound to a name) at runtime, using a construct called "lambda". This is not exactly the same as lambda in functional programming languages, but it is a very powerful concept that's well integrated into Python and is often used in conjunction with typical functional concepts like filter(), map() and reduce().
 
 ```python
 def times2(var):
     return var*2
-```
-
-
-```python
+#Output
 times2(2)
 ```
 
-
-
-
-    4
-
-
-
-
 ```python
 lambda var: var*2
+#Output
+<function __main__.<lambda>>
 ```
-
-
-
-
-    <function __main__.<lambda>>
-
-
-
-## Map and filter
-
-
-```python
-seq = [1,2,3,4,5]
-```
-
-
-```python
-map(times2,seq)
-```
-
-
-
-
-    <map at 0x105316748>
-
-
-
-
-```python
-list(map(times2,seq))
-```
-
-
-
-
-    [2, 4, 6, 8, 10]
-
-
-
-
-```python
-list(map(lambda var: var*2,seq))
-```
-
-
-
-
-    [2, 4, 6, 8, 10]
-
-
-
-
-```python
-filter(lambda item: item%2 == 0,seq)
-```
-
-
-
-
-    <filter at 0x105316ac8>
-
-
-
-
-```python
-list(filter(lambda item: item%2 == 0,seq))
-```
-
-
-
-
-    [2, 4]
-
-
 
 ## Methods
 
@@ -861,7 +683,3 @@ lst
 
 
     True
-
-
-
-# Great Job!
