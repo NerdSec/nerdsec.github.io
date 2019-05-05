@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <!-- Non social metatags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#157878">
+
+    
+
+    <title>Pandas Introduction</title>
+
+    
+      <!-- Update your html tag to include the itemscope and itemtype attributes. -->
+<html itemscope itemtype="http://schema.org/Article">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Place this data between the <head> tags of your website -->
+
+<meta name="description" content="In this post, we will try to get a basic idea about what exactly is pandas, and how we can use this library to grapple with data efficiently:" />
+
+
+
+
+
+<!-- Schema.org markup for Google+ -->
+<meta itemprop="name" content="Pandas Introduction">
+<meta itemprop="description" content="In this post, we will try to get a basic idea about what exactly is pandas, and how we can use this library to grapple with data efficiently:">
+
+  <meta itemprop="image" content="http://localhost:4000">
+
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+
+
+
+<meta name="twitter:title" content="Pandas Introduction">
+<meta name="twitter:description" content="In this post, we will try to get a basic idea about what exactly is pandas, and how we can use this library to grapple with data efficiently:">
+
+
+
+<!-- Twitter summary card with large image must be at least 280x150px -->
+
+  <meta name="twitter:image:src" content="http://localhost:4000">
+  <meta property="twitter:image" content="http://localhost:4000">
+
+<meta property="twitter:url" content="http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html">
+
+<!-- Open Graph data -->
+<meta property="og:title" content="Pandas Introduction" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html" />
+
+  <meta property="og:image" content="http://localhost:4000" />
+
+<meta property="og:description" content="In this post, we will try to get a basic idea about what exactly is pandas, and how we can use this library to grapple with data efficiently:" />
+<meta property="og:site_name" content="NerdSec" />
+
+  <meta property="article:published_time" content="2019-05-05T00:00:00+05:30" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <meta property="article:tag" content="Python">
+  
+    <meta property="article:tag" content="Pandas">
+  
+
+
+
+
+
+  
+    <meta property="article:tag" content="Data Science">
+  
+
+
+
+
+    
+
+    <link rel="canonical" href="http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html">
+
+    
+
+    <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+    <meta name="robots" content="noarchive">
+
+    <!-- <link rel="alternate" media="only screen and (max-width: 640px)" href="">
+    <link rel="alternate" media="handheld" href=""> -->
+
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/style.css?v=587b73bd29b914ea4767b03f71fa52da361f6746">
+  </head>
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+      
+
+
+
+
+
+
+
+
+    
+
+    
+    
+
+    
+      <a class="site-title" href="/">NerdSec</a>
+    
+
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+              
+                <a class="page-link" href="/categories/">Categories</a>
+              
+            
+          
+            
+            
+              
+                <a class="page-link" href="/tags/">Tags</a>
+              
+            
+          
+            
+            
+              
+              
+            
+          
+            
+            
+              
+                <a class="page-link" href="/about/">About</a>
+              
+            
+          
+            
+            
+              
+                <a class="page-link" href="/contact.html">Contact</a>
+              
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+
+    
+    
+    
+
+    <section class="page-header">
+      <h1 class="project-name">Pandas Introduction</h1>
+      <h2 class="project-tagline"></h2>
+      <!--  -->
+
+      
+      
+        <a href="/categories/#Data Science" class="btn">Data Science</a>
+      
+      
+
+      <!-- Post tagline -->
+      
+        <h2 class="project-date">
+        <time datetime="2019-05-05T00:00:00+05:30" itemprop="datePublished">
+          
+          May 5, 2019
+        </time>
+        
+        
+
+        </h2>
+      
+      <!-- End: Post tagline -->
+    </section>
+
+    <section class="main-content">
+
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+
+  <!-- <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Pandas Introduction</h1>
+    <p class="post-meta">
+      <time datetime="2019-05-05T00:00:00+05:30" itemprop="datePublished">
+        
+        May 5, 2019
+      </time>
+      </p>
+  </header> -->
+
+<div class="tag">
+  
+  <h4>Tags:</h4>
+  
+  <a href="/tags/#Python" class="btn">Python</a>
+  &nbsp;
+  
+  <a href="/tags/#Pandas" class="btn">Pandas</a>
+  
+  
+</div>
+
+  <div itemprop="articleBody">
+    <p>In this post, we will try to get a basic idea about what exactly is pandas, and how we can use this library to grapple with data efficiently:</p>
+
+<p>Pandas is a library that allows you to perform data analysis with ease and great performance at the same time.
+We will try to touch on two basic concepts of pandas.</p>
+<ul>
+  <li>Series</li>
+  <li>DataFrames</li>
+</ul>
+
+<h1 id="series">Series</h1>
+
+<p>The first main data type we will learn about for pandas is the Series data type. Let’s import Pandas and explore the Series object.</p>
+
+<p>A Series is very similar to a NumPy array (in fact it is built on top of the NumPy array object). What differentiates the NumPy array from a Series, is that a Series can have axis labels, meaning it can be indexed by a label, instead of just a number location. It also doesn’t need to hold numeric data, it can hold any arbitrary Python Object.</p>
+
+<p>Let’s explore this concept through some examples:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+</code></pre></div></div>
+
+<h3 id="creating-a-series">Creating a Series</h3>
+
+<p>You can convert a list, numpy array, or dictionary to a Series:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span><span class="s">'b'</span><span class="p">,</span><span class="s">'c'</span><span class="p">]</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">]</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">])</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">'a'</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="s">'b'</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="s">'c'</span><span class="p">:</span><span class="mi">30</span><span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="using-lists">Using Lists</h5>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">my_list</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    10
+1    20
+2    30
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">my_list</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a    10
+b    20
+c    30
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span><span class="n">labels</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a    10
+b    20
+c    30
+dtype: int64
+</code></pre></div></div>
+
+<h5 id="numpy-arrays">NumPy Arrays</h5>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    10
+1    20
+2    30
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="n">labels</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a    10
+b    20
+c    30
+dtype: int64
+</code></pre></div></div>
+
+<h5 id="dictionary">Dictionary</h5>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a    10
+b    20
+c    30
+dtype: int64
+</code></pre></div></div>
+
+<h3 id="data-in-a-series">Data in a Series</h3>
+
+<p>A pandas Series can hold a variety of object types:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    a
+1    b
+2    c
+dtype: object
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Even functions (although unlikely that you will use this)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="nb">sum</span><span class="p">,</span><span class="k">print</span><span class="p">,</span><span class="nb">len</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0      &lt;built-in function sum&gt;
+1    &lt;built-in function print&gt;
+2      &lt;built-in function len&gt;
+dtype: object
+</code></pre></div></div>
+
+<h2 id="using-an-index">Using an Index</h2>
+
+<p>The key to using a Series is understanding its index. Pandas makes use of these index names or numbers by allowing for fast look ups of information (works like a hash table or dictionary).</p>
+
+<p>Let’s see some examples of how to grab information from a Series. Let us create two sereis, ser1 and ser2:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s">'USA'</span><span class="p">,</span> <span class="s">'Germany'</span><span class="p">,</span><span class="s">'USSR'</span><span class="p">,</span> <span class="s">'Japan'</span><span class="p">])</span>                                   
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser1</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>USA        1
+Germany    2
+USSR       3
+Japan      4
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s">'USA'</span><span class="p">,</span> <span class="s">'Germany'</span><span class="p">,</span><span class="s">'Italy'</span><span class="p">,</span> <span class="s">'Japan'</span><span class="p">])</span>                                   
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser2</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>USA        1
+Germany    2
+Italy      5
+Japan      4
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser1</span><span class="p">[</span><span class="s">'USA'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
+</code></pre></div></div>
+
+<p>Operations are then also done based off of index:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser1</span> <span class="o">+</span> <span class="n">ser2</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Germany    4.0
+Italy      NaN
+Japan      8.0
+USA        2.0
+USSR       NaN
+dtype: float64
+</code></pre></div></div>
+
+<p>Let’s stop here for now and move on to DataFrames, which will expand on the concept of Series!</p>
+
+<h1 id="dataframes">DataFrames</h1>
+
+<p>DataFrames are the workhorse of pandas and are directly inspired by the R programming language. We can think of a DataFrame as a bunch of Series objects put together to share the same index. Let’s use pandas to explore this topic!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randn</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">101</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="n">index</span><span class="o">=</span><span class="s">'A B C D E'</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span><span class="n">columns</span><span class="o">=</span><span class="s">'W X Y Z'</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>2.706850</td>
+      <td>0.628133</td>
+      <td>0.907969</td>
+      <td>0.503826</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.651118</td>
+      <td>-0.319318</td>
+      <td>-0.848077</td>
+      <td>0.605965</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>-2.018168</td>
+      <td>0.740122</td>
+      <td>0.528813</td>
+      <td>-0.589001</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>0.188695</td>
+      <td>-0.758872</td>
+      <td>-0.933237</td>
+      <td>0.955057</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>0.190794</td>
+      <td>1.978757</td>
+      <td>2.605967</td>
+      <td>0.683509</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="selection-and-indexing">Selection and Indexing</h2>
+
+<p>Let’s learn the various methods to grab data from a DataFrame</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'W'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    2.706850
+B    0.651118
+C   -2.018168
+D    0.188695
+E    0.190794
+Name: W, dtype: float64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pass a list of column names</span>
+<span class="n">df</span><span class="p">[[</span><span class="s">'W'</span><span class="p">,</span><span class="s">'Z'</span><span class="p">]]</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>2.706850</td>
+      <td>0.503826</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.651118</td>
+      <td>0.605965</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>-2.018168</td>
+      <td>-0.589001</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>0.188695</td>
+      <td>0.955057</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>0.190794</td>
+      <td>0.683509</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># SQL Syntax (NOT RECOMMENDED!)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">W</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    2.706850
+B    0.651118
+C   -2.018168
+D    0.188695
+E    0.190794
+Name: W, dtype: float64
+</code></pre></div></div>
+
+<p>DataFrame Columns are just Series</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s">'W'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pandas.core.series.Series
+</code></pre></div></div>
+
+<p><strong>Creating a new column:</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'new'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'W'</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s">'Y'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+      <th>new</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>2.706850</td>
+      <td>0.628133</td>
+      <td>0.907969</td>
+      <td>0.503826</td>
+      <td>3.614819</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.651118</td>
+      <td>-0.319318</td>
+      <td>-0.848077</td>
+      <td>0.605965</td>
+      <td>-0.196959</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>-2.018168</td>
+      <td>0.740122</td>
+      <td>0.528813</td>
+      <td>-0.589001</td>
+      <td>-1.489355</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>0.188695</td>
+      <td>-0.758872</td>
+      <td>-0.933237</td>
+      <td>0.955057</td>
+      <td>-0.744542</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>0.190794</td>
+      <td>1.978757</td>
+      <td>2.605967</td>
+      <td>0.683509</td>
+      <td>2.796762</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>** Removing Columns**</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s">'new'</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>2.706850</td>
+      <td>0.628133</td>
+      <td>0.907969</td>
+      <td>0.503826</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.651118</td>
+      <td>-0.319318</td>
+      <td>-0.848077</td>
+      <td>0.605965</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>-2.018168</td>
+      <td>0.740122</td>
+      <td>0.528813</td>
+      <td>-0.589001</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>0.188695</td>
+      <td>-0.758872</td>
+      <td>-0.933237</td>
+      <td>0.955057</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>0.190794</td>
+      <td>1.978757</td>
+      <td>2.605967</td>
+      <td>0.683509</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Not inplace unless specified!</span>
+<span class="n">df</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+      <th>new</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>2.706850</td>
+      <td>0.628133</td>
+      <td>0.907969</td>
+      <td>0.503826</td>
+      <td>3.614819</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.651118</td>
+      <td>-0.319318</td>
+      <td>-0.848077</td>
+      <td>0.605965</td>
+      <td>-0.196959</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>-2.018168</td>
+      <td>0.740122</td>
+      <td>0.528813</td>
+      <td>-0.589001</td>
+      <td>-1.489355</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>0.188695</td>
+      <td>-0.758872</td>
+      <td>-0.933237</td>
+      <td>0.955057</td>
+      <td>-0.744542</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>0.190794</td>
+      <td>1.978757</td>
+      <td>2.605967</td>
+      <td>0.683509</td>
+      <td>2.796762</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s">'new'</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>2.706850</td>
+      <td>0.628133</td>
+      <td>0.907969</td>
+      <td>0.503826</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.651118</td>
+      <td>-0.319318</td>
+      <td>-0.848077</td>
+      <td>0.605965</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>-2.018168</td>
+      <td>0.740122</td>
+      <td>0.528813</td>
+      <td>-0.589001</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>0.188695</td>
+      <td>-0.758872</td>
+      <td>-0.933237</td>
+      <td>0.955057</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>0.190794</td>
+      <td>1.978757</td>
+      <td>2.605967</td>
+      <td>0.683509</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Can also drop rows this way:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s">'E'</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>2.706850</td>
+      <td>0.628133</td>
+      <td>0.907969</td>
+      <td>0.503826</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.651118</td>
+      <td>-0.319318</td>
+      <td>-0.848077</td>
+      <td>0.605965</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>-2.018168</td>
+      <td>0.740122</td>
+      <td>0.528813</td>
+      <td>-0.589001</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>0.188695</td>
+      <td>-0.758872</td>
+      <td>-0.933237</td>
+      <td>0.955057</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>** Selecting Rows**</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>W    2.706850
+X    0.628133
+Y    0.907969
+Z    0.503826
+Name: A, dtype: float64
+</code></pre></div></div>
+
+<p>Or select based off of position instead of label</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>W   -2.018168
+X    0.740122
+Y    0.528813
+Z   -0.589001
+Name: C, dtype: float64
+</code></pre></div></div>
+
+<p>** Selecting subset of rows and columns **</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'B'</span><span class="p">,</span><span class="s">'Y'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-0.84807698340363147
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s">'A'</span><span class="p">,</span><span class="s">'B'</span><span class="p">],[</span><span class="s">'W'</span><span class="p">,</span><span class="s">'Y'</span><span class="p">]]</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>Y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>2.706850</td>
+      <td>0.907969</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.651118</td>
+      <td>-0.848077</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="conditional-selection">Conditional Selection</h3>
+
+<p>An important feature of pandas is conditional selection using bracket notation, very similar to numpy:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>2.706850</td>
+      <td>0.628133</td>
+      <td>0.907969</td>
+      <td>0.503826</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.651118</td>
+      <td>-0.319318</td>
+      <td>-0.848077</td>
+      <td>0.605965</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>-2.018168</td>
+      <td>0.740122</td>
+      <td>0.528813</td>
+      <td>-0.589001</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>0.188695</td>
+      <td>-0.758872</td>
+      <td>-0.933237</td>
+      <td>0.955057</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>0.190794</td>
+      <td>1.978757</td>
+      <td>2.605967</td>
+      <td>0.683509</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">&gt;</span><span class="mi">0</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>2.706850</td>
+      <td>0.628133</td>
+      <td>0.907969</td>
+      <td>0.503826</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.651118</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.605965</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>NaN</td>
+      <td>0.740122</td>
+      <td>0.528813</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>0.188695</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.955057</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>0.190794</td>
+      <td>1.978757</td>
+      <td>2.605967</td>
+      <td>0.683509</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'W'</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>2.706850</td>
+      <td>0.628133</td>
+      <td>0.907969</td>
+      <td>0.503826</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.651118</td>
+      <td>-0.319318</td>
+      <td>-0.848077</td>
+      <td>0.605965</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>0.188695</td>
+      <td>-0.758872</td>
+      <td>-0.933237</td>
+      <td>0.955057</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>0.190794</td>
+      <td>1.978757</td>
+      <td>2.605967</td>
+      <td>0.683509</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'W'</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">][</span><span class="s">'Y'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    0.907969
+B   -0.848077
+D   -0.933237
+E    2.605967
+Name: Y, dtype: float64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'W'</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">][[</span><span class="s">'Y'</span><span class="p">,</span><span class="s">'X'</span><span class="p">]]</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Y</th>
+      <th>X</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>0.907969</td>
+      <td>0.628133</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>-0.848077</td>
+      <td>-0.319318</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>-0.933237</td>
+      <td>-0.758872</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>2.605967</td>
+      <td>1.978757</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<table>
+  <tbody>
+    <tr>
+      <td>For two conditions you can use</td>
+      <td>and &amp; with parenthesis:</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s">'W'</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s">'Y'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>E</th>
+      <td>0.190794</td>
+      <td>1.978757</td>
+      <td>2.605967</td>
+      <td>0.683509</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="more-index-details">More Index Details</h2>
+
+<p>Let’s discuss some more features of indexing, including resetting the index or setting it something else. We’ll also talk about index hierarchy!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>2.706850</td>
+      <td>0.628133</td>
+      <td>0.907969</td>
+      <td>0.503826</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.651118</td>
+      <td>-0.319318</td>
+      <td>-0.848077</td>
+      <td>0.605965</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>-2.018168</td>
+      <td>0.740122</td>
+      <td>0.528813</td>
+      <td>-0.589001</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>0.188695</td>
+      <td>-0.758872</td>
+      <td>-0.933237</td>
+      <td>0.955057</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>0.190794</td>
+      <td>1.978757</td>
+      <td>2.605967</td>
+      <td>0.683509</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Reset to default 0,1...n index</span>
+<span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>index</th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>2.706850</td>
+      <td>0.628133</td>
+      <td>0.907969</td>
+      <td>0.503826</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>B</td>
+      <td>0.651118</td>
+      <td>-0.319318</td>
+      <td>-0.848077</td>
+      <td>0.605965</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>C</td>
+      <td>-2.018168</td>
+      <td>0.740122</td>
+      <td>0.528813</td>
+      <td>-0.589001</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>D</td>
+      <td>0.188695</td>
+      <td>-0.758872</td>
+      <td>-0.933237</td>
+      <td>0.955057</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>E</td>
+      <td>0.190794</td>
+      <td>1.978757</td>
+      <td>2.605967</td>
+      <td>0.683509</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">newind</span> <span class="o">=</span> <span class="s">'CA NY WY OR CO'</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'States'</span><span class="p">]</span> <span class="o">=</span> <span class="n">newind</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+      <th>States</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>2.706850</td>
+      <td>0.628133</td>
+      <td>0.907969</td>
+      <td>0.503826</td>
+      <td>CA</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.651118</td>
+      <td>-0.319318</td>
+      <td>-0.848077</td>
+      <td>0.605965</td>
+      <td>NY</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>-2.018168</td>
+      <td>0.740122</td>
+      <td>0.528813</td>
+      <td>-0.589001</td>
+      <td>WY</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>0.188695</td>
+      <td>-0.758872</td>
+      <td>-0.933237</td>
+      <td>0.955057</td>
+      <td>OR</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>0.190794</td>
+      <td>1.978757</td>
+      <td>2.605967</td>
+      <td>0.683509</td>
+      <td>CO</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'States'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+    <tr>
+      <th>States</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CA</th>
+      <td>2.706850</td>
+      <td>0.628133</td>
+      <td>0.907969</td>
+      <td>0.503826</td>
+    </tr>
+    <tr>
+      <th>NY</th>
+      <td>0.651118</td>
+      <td>-0.319318</td>
+      <td>-0.848077</td>
+      <td>0.605965</td>
+    </tr>
+    <tr>
+      <th>WY</th>
+      <td>-2.018168</td>
+      <td>0.740122</td>
+      <td>0.528813</td>
+      <td>-0.589001</td>
+    </tr>
+    <tr>
+      <th>OR</th>
+      <td>0.188695</td>
+      <td>-0.758872</td>
+      <td>-0.933237</td>
+      <td>0.955057</td>
+    </tr>
+    <tr>
+      <th>CO</th>
+      <td>0.190794</td>
+      <td>1.978757</td>
+      <td>2.605967</td>
+      <td>0.683509</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+      <th>States</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>2.706850</td>
+      <td>0.628133</td>
+      <td>0.907969</td>
+      <td>0.503826</td>
+      <td>CA</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.651118</td>
+      <td>-0.319318</td>
+      <td>-0.848077</td>
+      <td>0.605965</td>
+      <td>NY</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>-2.018168</td>
+      <td>0.740122</td>
+      <td>0.528813</td>
+      <td>-0.589001</td>
+      <td>WY</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>0.188695</td>
+      <td>-0.758872</td>
+      <td>-0.933237</td>
+      <td>0.955057</td>
+      <td>OR</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>0.190794</td>
+      <td>1.978757</td>
+      <td>2.605967</td>
+      <td>0.683509</td>
+      <td>CO</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'States'</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+    <tr>
+      <th>States</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CA</th>
+      <td>2.706850</td>
+      <td>0.628133</td>
+      <td>0.907969</td>
+      <td>0.503826</td>
+    </tr>
+    <tr>
+      <th>NY</th>
+      <td>0.651118</td>
+      <td>-0.319318</td>
+      <td>-0.848077</td>
+      <td>0.605965</td>
+    </tr>
+    <tr>
+      <th>WY</th>
+      <td>-2.018168</td>
+      <td>0.740122</td>
+      <td>0.528813</td>
+      <td>-0.589001</td>
+    </tr>
+    <tr>
+      <th>OR</th>
+      <td>0.188695</td>
+      <td>-0.758872</td>
+      <td>-0.933237</td>
+      <td>0.955057</td>
+    </tr>
+    <tr>
+      <th>CO</th>
+      <td>0.190794</td>
+      <td>1.978757</td>
+      <td>2.605967</td>
+      <td>0.683509</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="multi-index-and-index-hierarchy">Multi-Index and Index Hierarchy</h2>
+
+<p>Let us go over how to work with Multi-Index, first we’ll create a quick example of what a Multi-Indexed DataFrame would look like:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Index Levels</span>
+<span class="n">outside</span> <span class="o">=</span> <span class="p">[</span><span class="s">'G1'</span><span class="p">,</span><span class="s">'G1'</span><span class="p">,</span><span class="s">'G1'</span><span class="p">,</span><span class="s">'G2'</span><span class="p">,</span><span class="s">'G2'</span><span class="p">,</span><span class="s">'G2'</span><span class="p">]</span>
+<span class="n">inside</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">hier_index</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">outside</span><span class="p">,</span><span class="n">inside</span><span class="p">))</span>
+<span class="n">hier_index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">(</span><span class="n">hier_index</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">hier_index</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MultiIndex(levels=[['G1', 'G2'], [1, 2, 3]],
+           labels=[[0, 0, 0, 1, 1, 1], [0, 1, 2, 0, 1, 2]])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">index</span><span class="o">=</span><span class="n">hier_index</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">'A'</span><span class="p">,</span><span class="s">'B'</span><span class="p">])</span>
+<span class="n">df</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">G1</th>
+      <th>1</th>
+      <td>0.153661</td>
+      <td>0.167638</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.765930</td>
+      <td>0.962299</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.902826</td>
+      <td>-0.537909</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">G2</th>
+      <th>1</th>
+      <td>-1.549671</td>
+      <td>0.435253</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.259904</td>
+      <td>-0.447898</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.266207</td>
+      <td>0.412580</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Now let’s show how to index this! For index hierarchy we use df.loc[], if this was on the columns axis, you would just use normal bracket notation df[]. Calling one level of the index returns the sub-dataframe:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'G1'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>0.153661</td>
+      <td>0.167638</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.765930</td>
+      <td>0.962299</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.902826</td>
+      <td>-0.537909</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'G1'</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    0.153661
+B    0.167638
+Name: 1, dtype: float64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FrozenList([None, None])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Group'</span><span class="p">,</span><span class="s">'Num'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+    <tr>
+      <th>Group</th>
+      <th>Num</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">G1</th>
+      <th>1</th>
+      <td>0.153661</td>
+      <td>0.167638</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.765930</td>
+      <td>0.962299</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.902826</td>
+      <td>-0.537909</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">G2</th>
+      <th>1</th>
+      <td>-1.549671</td>
+      <td>0.435253</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.259904</td>
+      <td>-0.447898</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.266207</td>
+      <td>0.412580</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="s">'G1'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+    <tr>
+      <th>Num</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>0.153661</td>
+      <td>0.167638</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.765930</td>
+      <td>0.962299</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.902826</td>
+      <td>-0.537909</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">xs</span><span class="p">([</span><span class="s">'G1'</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    0.153661
+B    0.167638
+Name: (G1, 1), dtype: float64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">level</span><span class="o">=</span><span class="s">'Num'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+    <tr>
+      <th>Group</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>G1</th>
+      <td>0.153661</td>
+      <td>0.167638</td>
+    </tr>
+    <tr>
+      <th>G2</th>
+      <td>-1.549671</td>
+      <td>0.435253</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>We now have a basic idea about DataFrames. In the next post we will try to cover some advanced operations on DataFrames.</p>
+
+<p align="center">
+  <img src="https://pbs.twimg.com/media/CSzokJ0VAAAH4fY.jpg" />
+</p>
+
+<p>Cheers,
+NerdSec</p>
+
+  </div>
+
+  
+</article>
+
+<div class="share-box">
+<h5>Share this:</h5>
+
+<a class="f" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><i class="fa fa-facebook-official fa"></i><span> 
+facebook</span></a>
+
+<a class="t" href="https://twitter.com/intent/tweet?text=Pandas Introduction&url=http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html" 
+onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter fa"></i><span>twitter</span></a>
+        
+<a class="g" href="https://plus.google.com/share?url=http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html" 
+onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><i class="fa fa-google-plus fa"></i><span>google</span></a>
+        
+<a class="r" href="http://www.reddit.com/submit?url=http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html" 
+onclick="window.open(this.href, 'mywin','left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" ><i class="fa fa-reddit fa"></i><span> reddit</span></a>
+
+<a class="l" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html&title=Pandas Introduction&summary=" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><i class="fa fa-linkedin fa"></i><span>linkedin</span></a>
+
+<a class="e" href="mailto:?subject=Pandas Introduction&amp;body=Check out this site http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html"><i class="fa fa-envelope fa"></i><span> email</span></a>                          
+</div>
+
+
+      <footer class="site-footer">
+        <!-- SVG icons from https://iconmonstr.com -->
+
+        <!-- Github icon -->
+        <span class="my-span-icon">
+          <a href="https://github.com/NerdSec" aria-label="NerdSec's GitHub" title="NerdSec's GitHub">
+            <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+        </span>
+
+        <!-- Twitter icon -->
+        <span class="my-span-icon">
+          <a href="https://twitter.com/" aria-label="NerdSec's Twitter" title="NerdSec's Twitter">
+            <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/></svg>
+          </a>
+        </span>
+
+        <!-- RSS icon -->
+        
+        <!-- Contact icon -->
+        
+        
+          <span class="my-span-icon">
+            <a href="/about/" aria-label="Contact" title="Contact NerdSec">
+              <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .02c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.99 6.98l-6.99 5.666-6.991-5.666h13.981zm.01 10h-14v-8.505l7 5.673 7-5.672v8.504z"/></svg>
+            </a>
+          </span>
+        
+
+      </footer>
+    </section>
+
+    
+  </body>
+</html>
