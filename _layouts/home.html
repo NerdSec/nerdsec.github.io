@@ -7,7 +7,6 @@ layout: default
   {{ content }}
 
   <h2>Latest Posts</h2>
-
   <div>&nbsp;</div>
 
   <ul class="post-list">
@@ -20,19 +19,19 @@ layout: default
         <h2>
           <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}">{{ post.title | escape }}</a>
 
-<h4>
-  {% if post %}
-    {% assign tags = post.tags %}
-  {% else %}
-    {% assign tags = page.tags %}
-  {% endif %}
-  {% for tag in tags %}
-  <span class="share-box"> 
-  <a href="{{site.baseurl}}/tags/#{{tag|slugize}}" class="t">{{tag}}</a>
-  </span>
-  {% unless forloop.last %}&nbsp;{% endunless %}
-  {% endfor %}
-</h4>
+        <h4>
+          {% if post %}
+            {% assign tags = post.tags %}
+          {% else %}
+            {% assign tags = page.tags %}
+          {% endif %}
+          {% for tag in tags %}
+            <span class="share-box">
+            <a href="{{site.baseurl}}/tags/#{{tag|slugize}}" class="t">{{tag}}</a>
+            </span>
+            {% unless forloop.last %}&nbsp;{% endunless %}
+          {% endfor %}
+        </h4>
 
         </h2>
 
@@ -41,5 +40,10 @@ layout: default
       </li>
     {% endfor %}
   </ul>
+
+  <h2>Eternal Truth</h2>
+  <p align="center">
+    <img src="https://pbs.twimg.com/media/CSzokJ0VAAAH4fY.jpg">
+  </p>
 
 </div>

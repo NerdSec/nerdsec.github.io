@@ -1,0 +1,16 @@
+current directory: /home/nerdsec/Git/nerdsec.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+/usr/bin/ruby -I /usr/lib/ruby/2.6.0 -r ./siteconf20190506-27253-1k3oakj.rb extconf.rb
+creating Makefile
+
+current directory: /home/nerdsec/Git/nerdsec.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR=" clean
+
+current directory: /home/nerdsec/Git/nerdsec.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR="
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.so
+
+current directory: /home/nerdsec/Git/nerdsec.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 fastfilereaderext.so ./.gem.20190506-27253-1ulo3jy
