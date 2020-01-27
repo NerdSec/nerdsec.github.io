@@ -114,7 +114,7 @@
 
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/assets/css/style.css?v=587b73bd29b914ea4767b03f71fa52da361f6746">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7946c2d882af2138fc1135aee6be8325983417be">
   </head>
   <body>
 
@@ -307,7 +307,7 @@ We will try to touch on two basic concepts of pandas.</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">my_list</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    10
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    10
 1    20
 2    30
 dtype: int64
@@ -316,7 +316,7 @@ dtype: int64
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">my_list</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a    10
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a    10
 b    20
 c    30
 dtype: int64
@@ -325,7 +325,7 @@ dtype: int64
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span><span class="n">labels</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a    10
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a    10
 b    20
 c    30
 dtype: int64
@@ -336,7 +336,7 @@ dtype: int64
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    10
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    10
 1    20
 2    30
 dtype: int64
@@ -345,7 +345,7 @@ dtype: int64
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="n">labels</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a    10
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a    10
 b    20
 c    30
 dtype: int64
@@ -356,7 +356,7 @@ dtype: int64
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a    10
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a    10
 b    20
 c    30
 dtype: int64
@@ -369,17 +369,17 @@ dtype: int64
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    a
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0    a
 1    b
 2    c
 dtype: object
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Even functions (although unlikely that you will use this)</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="nb">sum</span><span class="p">,</span><span class="k">print</span><span class="p">,</span><span class="nb">len</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Even functions (although unlikely that you will use this)
+</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="nb">sum</span><span class="p">,</span><span class="k">print</span><span class="p">,</span><span class="nb">len</span><span class="p">])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0      &lt;built-in function sum&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0      &lt;built-in function sum&gt;
 1    &lt;built-in function print&gt;
 2      &lt;built-in function len&gt;
 dtype: object
@@ -397,7 +397,7 @@ dtype: object
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser1</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>USA        1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>USA        1
 Germany    2
 USSR       3
 Japan      4
@@ -410,7 +410,7 @@ dtype: int64
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser2</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>USA        1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>USA        1
 Germany    2
 Italy      5
 Japan      4
@@ -420,7 +420,7 @@ dtype: int64
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser1</span><span class="p">[</span><span class="s">'USA'</span><span class="p">]</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
 </code></pre></div></div>
 
 <p>Operations are then also done based off of index:</p>
@@ -428,7 +428,7 @@ dtype: int64
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser1</span> <span class="o">+</span> <span class="n">ser2</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Germany    4.0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Germany    4.0
 Italy      NaN
 Japan      8.0
 USA        2.0
@@ -514,7 +514,7 @@ dtype: float64
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'W'</span><span class="p">]</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    2.706850
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    2.706850
 B    0.651118
 C   -2.018168
 D    0.188695
@@ -522,8 +522,8 @@ E    0.190794
 Name: W, dtype: float64
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pass a list of column names</span>
-<span class="n">df</span><span class="p">[[</span><span class="s">'W'</span><span class="p">,</span><span class="s">'Z'</span><span class="p">]]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Pass a list of column names
+</span><span class="n">df</span><span class="p">[[</span><span class="s">'W'</span><span class="p">,</span><span class="s">'Z'</span><span class="p">]]</span>
 </code></pre></div></div>
 
 <div>
@@ -565,11 +565,11 @@ Name: W, dtype: float64
 </table>
 </div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># SQL Syntax (NOT RECOMMENDED!)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">W</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># SQL Syntax (NOT RECOMMENDED!)
+</span><span class="n">df</span><span class="o">.</span><span class="n">W</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    2.706850
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    2.706850
 B    0.651118
 C   -2.018168
 D    0.188695
@@ -582,7 +582,7 @@ Name: W, dtype: float64
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s">'W'</span><span class="p">])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pandas.core.series.Series
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pandas.core.series.Series
 </code></pre></div></div>
 
 <p><strong>Creating a new column:</strong></p>
@@ -706,8 +706,8 @@ Name: W, dtype: float64
 </table>
 </div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Not inplace unless specified!</span>
-<span class="n">df</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Not inplace unless specified!
+</span><span class="n">df</span>
 </code></pre></div></div>
 
 <div>
@@ -878,7 +878,7 @@ Name: W, dtype: float64
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>W    2.706850
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>W    2.706850
 X    0.628133
 Y    0.907969
 Z    0.503826
@@ -890,7 +890,7 @@ Name: A, dtype: float64
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>W   -2.018168
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>W   -2.018168
 X    0.740122
 Y    0.528813
 Z   -0.589001
@@ -902,7 +902,7 @@ Name: C, dtype: float64
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'B'</span><span class="p">,</span><span class="s">'Y'</span><span class="p">]</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-0.84807698340363147
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-0.84807698340363147
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s">'A'</span><span class="p">,</span><span class="s">'B'</span><span class="p">],[</span><span class="s">'W'</span><span class="p">,</span><span class="s">'Y'</span><span class="p">]]</span>
@@ -1148,7 +1148,7 @@ Name: C, dtype: float64
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'W'</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">][</span><span class="s">'Y'</span><span class="p">]</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    0.907969
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    0.907969
 B   -0.848077
 D   -0.933237
 E    2.605967
@@ -1285,8 +1285,8 @@ Name: Y, dtype: float64
 </table>
 </div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Reset to default 0,1...n index</span>
-<span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Reset to default 0,1...n index
+</span><span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 </code></pre></div></div>
 
 <div>
@@ -1601,8 +1601,8 @@ Name: Y, dtype: float64
 
 <p>Let us go over how to work with Multi-Index, first we’ll create a quick example of what a Multi-Indexed DataFrame would look like:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Index Levels</span>
-<span class="n">outside</span> <span class="o">=</span> <span class="p">[</span><span class="s">'G1'</span><span class="p">,</span><span class="s">'G1'</span><span class="p">,</span><span class="s">'G1'</span><span class="p">,</span><span class="s">'G2'</span><span class="p">,</span><span class="s">'G2'</span><span class="p">,</span><span class="s">'G2'</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Index Levels
+</span><span class="n">outside</span> <span class="o">=</span> <span class="p">[</span><span class="s">'G1'</span><span class="p">,</span><span class="s">'G1'</span><span class="p">,</span><span class="s">'G1'</span><span class="p">,</span><span class="s">'G2'</span><span class="p">,</span><span class="s">'G2'</span><span class="p">,</span><span class="s">'G2'</span><span class="p">]</span>
 <span class="n">inside</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 <span class="n">hier_index</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">outside</span><span class="p">,</span><span class="n">inside</span><span class="p">))</span>
 <span class="n">hier_index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">(</span><span class="n">hier_index</span><span class="p">)</span>
@@ -1611,7 +1611,7 @@ Name: Y, dtype: float64
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">hier_index</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MultiIndex(levels=[['G1', 'G2'], [1, 2, 3]],
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MultiIndex(levels=[['G1', 'G2'], [1, 2, 3]],
            labels=[[0, 0, 0, 1, 1, 1], [0, 1, 2, 0, 1, 2]])
 </code></pre></div></div>
 
@@ -1703,7 +1703,7 @@ Name: Y, dtype: float64
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'G1'</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    0.153661
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    0.153661
 B    0.167638
 Name: 1, dtype: float64
 </code></pre></div></div>
@@ -1711,7 +1711,7 @@ Name: 1, dtype: float64
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FrozenList([None, None])
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FrozenList([None, None])
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Group'</span><span class="p">,</span><span class="s">'Num'</span><span class="p">]</span>
@@ -1813,7 +1813,7 @@ Name: 1, dtype: float64
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">xs</span><span class="p">([</span><span class="s">'G1'</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    0.153661
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A    0.153661
 B    0.167638
 Name: (G1, 1), dtype: float64
 </code></pre></div></div>
