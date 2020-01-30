@@ -58,6 +58,9 @@ So, we had data that was parsed. A `json` structured stream of data (more on how
 
 Kafka chugged down the data like a champ. Now, we needed to store this data
 
+Since data is already in json format we decided to user No-SQL database to store the data assuming that it will be schemaless and we don't have to define anything before we start storing the data. But sooner, we realized, that is not the case. We still have to define data structure. Moreover We have to put effort in engineering so that data is equally distributed across data storage. Then we have to use a middle layer which makes No-SQL looks like SQL to simplify data ingestion. So we gave up on No-SQL storage and decided to use Hive since it is more established and was in use by other teams. But what we wanted to do is to use the data for anlytics and apperently hive was very slow for this task. So now we have to use Druid in order to 
+have analytics at speed and to visualize it with Superset. Next task was to take data from hive table and send it to Druid index where it will be aggregated before storing. One simple task of ingesting the data and visualizing it involved so many componants and intricacies.
+
 Kafka -> HBase
 
 Challenges:
