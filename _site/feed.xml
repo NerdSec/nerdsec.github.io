@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-27T23:15:33+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">NerdSec</title><subtitle>A blog covering Python, Data Science, Machine Learning, and Big Data.</subtitle><entry><title type="html">Security Jedi - Chapter 1</title><link href="http://localhost:4000/beginner's%20guide/2020/01/01/security-jedi-1.html" rel="alternate" type="text/html" title="Security Jedi - Chapter 1" /><published>2020-01-01T00:00:00+05:30</published><updated>2020-01-01T00:00:00+05:30</updated><id>http://localhost:4000/beginner's%20guide/2020/01/01/security-jedi-1</id><content type="html" xml:base="http://localhost:4000/beginner's%20guide/2020/01/01/security-jedi-1.html">&lt;h1 id=&quot;medusa---the-log-monster&quot;&gt;Medusa - The Log Monster&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-30T06:27:55+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">NerdSec</title><subtitle>A blog covering Python, Data Science, Machine Learning, and Big Data.</subtitle><entry><title type="html">Security Jedi - Chapter 1</title><link href="http://localhost:4000/beginner's%20guide/2020/01/01/security-jedi-1.html" rel="alternate" type="text/html" title="Security Jedi - Chapter 1" /><published>2020-01-01T00:00:00+05:30</published><updated>2020-01-01T00:00:00+05:30</updated><id>http://localhost:4000/beginner's%20guide/2020/01/01/security-jedi-1</id><content type="html" xml:base="http://localhost:4000/beginner's%20guide/2020/01/01/security-jedi-1.html">&lt;h2 id=&quot;siem---hero-or-villain&quot;&gt;SIEM - Hero or Villain?&lt;/h2&gt;
 
-&lt;p&gt;For the past decade, &lt;strong&gt;SIEM&lt;/strong&gt; has been ruining the lives of many SOC Analysts. How a beautiful fair maiden desired by many Analysts eventually became the most feared Gorgon, is a story well documented in history.&lt;/p&gt;
+&lt;p&gt;For the past decade, &lt;strong&gt;SIEM&lt;/strong&gt; has been ruining the lives of many SOC Analysts. Just like &lt;strong&gt;Anakin Skywalker&lt;/strong&gt;, all &lt;strong&gt;SIEM&lt;/strong&gt; technologies started with good intentions. But how over time things have changed. A tool meant to ease the life of an Analyst has now turned out to be his life’s biggest bane.&lt;/p&gt;
 
-&lt;p&gt;Ask any analyst to use only a commercial &lt;strong&gt;SIEM&lt;/strong&gt; in the market today for his monitoring activities and you can watch him turn to stone. Literally!&lt;/p&gt;
+&lt;p&gt;Ask any analyst to use only a commercial &lt;strong&gt;SIEM&lt;/strong&gt; in the market today for his monitoring activities and you can watch him turn to stone from fear. Literally!&lt;/p&gt;
 
-&lt;h2 id=&quot;performance-tuning&quot;&gt;Performance Tuning&lt;/h2&gt;
+&lt;h3 id=&quot;performance-tuning&quot;&gt;Performance Tuning&lt;/h3&gt;
 
 &lt;p&gt;Maybe the introduction was a bit over the top (or maybe not). But, the general consensus over &lt;strong&gt;SIEM&lt;/strong&gt; is that eventually, it spirals out of control. &lt;em&gt;Does it have to though?&lt;/em&gt;&lt;/p&gt;
 
@@ -25,24 +25,20 @@
   &lt;li&gt;Ease of use&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;modify ref&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Our &lt;strong&gt;SIEM&lt;/strong&gt;, was quite easy to use. I will concede that much. But, boy was she rigid, and don’t even get me started on the speed. Run a query now and &lt;strong&gt;expect a response once the dust on your grave is settled&lt;/strong&gt;. But then again, it was getting old with little maintanance. Not that when it had both, it did any better, but still. I digress.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Our Medusa&lt;/em&gt;, was quite easy to use. I will concede that much. But, boy was she rigid, and don’t even get me started on the speed. Run a query now and &lt;strong&gt;expect a response once the dust on your grave is settled&lt;/strong&gt;. But then again, she was getting old with little maintanance. Not that when she had both, she did an excellent job, but still. I digress.&lt;/p&gt;
+&lt;h2 id=&quot;luke-skywalker---big-data-fame&quot;&gt;Luke Skywalker - Big Data Fame&lt;/h2&gt;
 
-&lt;h1 id=&quot;perseus---big-data-fame&quot;&gt;Perseus - Big Data Fame&lt;/h1&gt;
-
-&lt;p&gt;Then came the oracle, use a big data stack to solve this problem. Some Medusas, tried to jump on this band wagon and disguise themselves as a Big Data platform. Some tried to sell themself as an augmented solution sitting alongside your Perseus. Some ignored it, hoping that you would forget about it and finally see back into their eyes (and turn to stone). While some platforms truly did make that switch or better still were designed with those principles in mind.&lt;/p&gt;
+&lt;p&gt;Then came the oracle, use a big data stack to solve this problem. Some &lt;strong&gt;SIEM&lt;/strong&gt;, tried to jump on this band wagon and disguise themselves as a Big Data platform. Some tried to sell themself as an augmented solution sitting alongside your &lt;strong&gt;Big Data&lt;/strong&gt; stack. Some ignored it, hoping that you would forget about it and finally see the light (or darkness). While some platforms truly did make that switch or better still, were designed with those principles in mind.&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;insert big data image
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;pretenders-and-survivors&quot;&gt;Pretenders and Survivors&lt;/h2&gt;
+&lt;h3 id=&quot;pretenders-and-survivors&quot;&gt;Pretenders and Survivors&lt;/h3&gt;
 
 &lt;p&gt;While we could write an entire book if we were to cover all the Medusas; but we aren’t here to do that! We are here to discuss how you can build something that is tailored for you and your environment&lt;/p&gt;
 
-&lt;h2 id=&quot;sword-mace-or-lance&quot;&gt;Sword, Mace, or Lance&lt;/h2&gt;
+&lt;h3 id=&quot;sword-mace-or-light-saber&quot;&gt;Sword, Mace, or Light Saber&lt;/h3&gt;
 
 &lt;p&gt;So, if you are still reading this, that means you are one of us. And, like a true &lt;strong&gt;Jedi&lt;/strong&gt; we will forge a path with our light and fight the Dark-side. But wait, what should we use to defeat the &lt;strong&gt;Sith&lt;/strong&gt;?&lt;/p&gt;
 
@@ -74,7 +70,7 @@
   &lt;li&gt;Superset for visualizing data in DRUID.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;humble-beginnings&quot;&gt;Humble Beginnings&lt;/h3&gt;
+&lt;h2 id=&quot;humble-beginnings&quot;&gt;Humble Beginnings&lt;/h2&gt;
 
 &lt;p&gt;After, the earlier nightmare, you might wonder. Was it a right choice to join the &lt;strong&gt;Jedis&lt;/strong&gt;. Maybe the &lt;strong&gt;Sith&lt;/strong&gt; were right, the dark-side is the way to go.&lt;/p&gt;
 
@@ -113,7 +109,31 @@
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;image of initial architecture
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;We were pleasantly surprised with how easy it was to get the stack up and running. So, let’s dissect this a little further to glance in what we have done.&lt;/p&gt;</content><author><name></name></author><category term="Big" /><category term="Data" /><summary type="html">Medusa - The Log Monster</summary></entry><entry><title type="html">Pandas Introduction</title><link href="http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html" rel="alternate" type="text/html" title="Pandas Introduction" /><published>2019-05-05T00:00:00+05:30</published><updated>2019-05-05T00:00:00+05:30</updated><id>http://localhost:4000/data%20science/2019/05/05/pandas-introduction</id><content type="html" xml:base="http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html">&lt;p&gt;In this post, we will try to get a basic idea about what exactly is pandas, and how we can use this library to grapple with data efficiently:&lt;/p&gt;
+&lt;p&gt;We were pleasantly surprised with how easy it was to get the stack up and running. The possibilities were endless and we were about to embark on a journey that would transform the way we monitored our security events.&lt;/p&gt;
+
+&lt;p&gt;In the next section we will cover these humble beginnings step-by-step. Until next time.&lt;/p&gt;
+
+&lt;blockquote cite=&quot;http://www.worldwildlife.org/who/index.html&quot;&gt;
+For 50 years, WWF has been protecting the future of nature.
+The world's leading conservation organization,
+WWF works in 100 countries and is supported by
+1.2 million members in the United States and
+close to 5 million globally.
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Within infinite myths lies the eternal truth&lt;/p&gt;
+
+  &lt;p&gt;Who sees it all?&lt;/p&gt;
+
+  &lt;p&gt;Varuna has but a thousand eyes,&lt;/p&gt;
+
+  &lt;p&gt;Indra has a hundred,&lt;/p&gt;
+
+  &lt;p&gt;You and I, only two.&lt;/p&gt;
+
+  &lt;p&gt;-Devdutt Patnaik&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><category term="Big" /><category term="Data" /><summary type="html">SIEM - Hero or Villain?</summary></entry><entry><title type="html">Pandas Introduction</title><link href="http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html" rel="alternate" type="text/html" title="Pandas Introduction" /><published>2019-05-05T00:00:00+05:30</published><updated>2019-05-05T00:00:00+05:30</updated><id>http://localhost:4000/data%20science/2019/05/05/pandas-introduction</id><content type="html" xml:base="http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html">&lt;p&gt;In this post, we will try to get a basic idea about what exactly is pandas, and how we can use this library to grapple with data efficiently:&lt;/p&gt;
 
 &lt;p&gt;Pandas is a library that allows you to perform data analysis with ease and great performance at the same time.
 We will try to touch on two basic concepts of pandas.&lt;/p&gt;

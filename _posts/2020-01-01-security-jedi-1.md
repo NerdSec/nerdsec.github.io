@@ -2,16 +2,16 @@
 layout: post
 title: "Security Jedi - Chapter 1"
 categories: ["Beginner's Guide"]
-tags: Big Data
+tags: "Big Data"
 ---
 
-# Medusa - The Log Monster
+## SIEM - Hero or Villain?
 
-For the past decade, **SIEM** has been ruining the lives of many SOC Analysts. How a beautiful fair maiden desired by many Analysts eventually became the most feared Gorgon, is a story well documented in history.
+For the past decade, **SIEM** has been ruining the lives of many SOC Analysts. Just like **Anakin Skywalker**, all **SIEM** technologies started with good intentions. But how over time things have changed. A tool meant to ease the life of an Analyst has now turned out to be his life's biggest bane.
 
-Ask any analyst to use only a commercial **SIEM** in the market today for his monitoring activities and you can watch him turn to stone. Literally!
+Ask any analyst to use only a commercial **SIEM** in the market today for his monitoring activities and you can watch him turn to stone from fear. Literally!
 
-## Performance Tuning
+### Performance Tuning
 
 Maybe the introduction was a bit over the top (or maybe not). But, the general consensus over **SIEM** is that eventually, it spirals out of control. _Does it have to though?_
 
@@ -28,22 +28,19 @@ These four things, if you haven't noticed, are not abundant in our field. Also, 
 * Flexibility
 * Ease of use
 
+Our **SIEM**, was quite easy to use. I will concede that much. But, boy was she rigid, and don't even get me started on the speed. Run a query now and **expect a response once the dust on your grave is settled**. But then again, it was getting old with little maintanance. Not that when it had both, it did any better, but still. I digress.
 
-> modify ref
+## Luke Skywalker - Big Data Fame
 
-_Our Medusa_, was quite easy to use. I will concede that much. But, boy was she rigid, and don't even get me started on the speed. Run a query now and **expect a response once the dust on your grave is settled**. But then again, she was getting old with little maintanance. Not that when she had both, she did an excellent job, but still. I digress.
-
-# Perseus - Big Data Fame
-
-Then came the oracle, use a big data stack to solve this problem. Some Medusas, tried to jump on this band wagon and disguise themselves as a Big Data platform. Some tried to sell themself as an augmented solution sitting alongside your Perseus. Some ignored it, hoping that you would forget about it and finally see back into their eyes (and turn to stone). While some platforms truly did make that switch or better still were designed with those principles in mind.
+Then came the oracle, use a big data stack to solve this problem. Some **SIEM**, tried to jump on this band wagon and disguise themselves as a Big Data platform. Some tried to sell themself as an augmented solution sitting alongside your **Big Data** stack. Some ignored it, hoping that you would forget about it and finally see the light (or darkness). While some platforms truly did make that switch or better still, were designed with those principles in mind.
 
     insert big data image
 
-## Pretenders and Survivors
+### Pretenders and Survivors
 
 While we could write an entire book if we were to cover all the Medusas; but we aren't here to do that! We are here to discuss how you can build something that is tailored for you and your environment
 
-## Sword, Mace, or Lance
+### Sword, Mace, or Light Saber
 
 So, if you are still reading this, that means you are one of us. And, like a true **Jedi** we will forge a path with our light and fight the Dark-side. But wait, what should we use to defeat the **Sith**?
 
@@ -64,6 +61,7 @@ Kafka chugged down the data like a champ. Now, we needed to store this data
 Kafka -> HBase
 
 Challenges:
+
 1. Engg efforts
 2. Pheonix - Define a mapping -> back to RDBMS?
 3. Why not HIVE if mapping to be done. More established and already in use by teams.
@@ -71,15 +69,13 @@ Challenges:
 5. DRUID for analytics. -> Spark job to aggregate and send data to DRUID
 6. Superset for visualizing data in DRUID.
 
-
-### Humble Beginnings
+## Humble Beginnings
 
 After, the earlier nightmare, you might wonder. Was it a right choice to join the **Jedis**. Maybe the **Sith** were right, the dark-side is the way to go.
 
 But there was already something we were using. A tool for automating the `Vulnerability Management` platform. Something that was easy to start with and use. Would it scale though? A nagging question, but only one way to find out; try it!
 
 > **Message from Yoda**: May the force be with you!
-
 
 ## Elastic Snake
 
@@ -104,4 +100,18 @@ So we started with a humble architecture:
 
     image of initial architecture
 
-We were pleasantly surprised with how easy it was to get the stack up and running. So, let's dissect this a little further to glance in what we have done.
+We were pleasantly surprised with how easy it was to get the stack up and running. The possibilities were endless and we were about to embark on a journey that would transform the way we monitored our security events.
+
+In the next section we will cover these humble beginnings step-by-step. Until next time.
+
+> Within infinite myths lies the eternal truth
+>
+> Who sees it all?
+>
+> Varuna has but a thousand eyes,
+>
+> Indra has a hundred,
+>
+> You and I, only two.
+>
+> -Devdutt Patnaik
