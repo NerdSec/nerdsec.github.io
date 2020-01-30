@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Security Jedi - Chapter 1"
+title: "Security Jedi Series - Chapter 1"
 categories: ["Beginner's Guide"]
 tags: "Big Data"
 ---
