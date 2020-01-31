@@ -62,9 +62,10 @@ So, let's start with the _Elephant_ in the room, pun intended. The stack was in 
 
 So, we had data that was parsed. A `json` structured stream of data (more on how we did this later). The integration was supposed to be a breeze, would it though?
 
-Kafka chugged down the data like a champ. Now, we needed to store this data. Now that we were using Apache stack, there were quite a few options. We could use HDFS. We could use Hive. We could use Hbase. Since data was already in a json format, we decided that we will go for a No-SQL data store. And Apache HBase was the ultimate choice. We had data in Kafka and it was only the matter of time that we store it in to HBase and start using it for analytics.But how do we send data to Hbase? So we started evaluating our options for ingestion framework.
+Kafka chugged down the data like a champ. Now, we needed to store this data. Now that we were using Apache stack, there were quite a few options. We could use HDFS. We could use Hive. We could use Hbase. Since data was already in a json format, we decided that we will go for a No-SQL data store. And Apache HBase was the ultimate choice. We had data in Kafka and it was only the matter of time that we store it in to HBase and start using it for analytics. But how do we send data to Hbase? So we started evaluating our options for ingestion framework.
 
 #### Data Ingestion
+
 As most of the users of Apache Stack would do, we were suggested to go for NiFi. Being a dataflow management platform, It had plethora of options to ingest from, process and forward data to variety of platforms. So we decided to give it a try. But sadly, it could not handle the volume and speed at which the data was being fed and end up being slow.
 
 So we heard there is A Spark and it is supposed to be super fast. Almost 100x faster than other data processing tools and Map-Reduce jobs. Plus, it supported Python. Apperantly it had all the qualities that we were looking for. We decide to give it a try.
@@ -75,11 +76,13 @@ Getting started with Spark was not an easy task. To our surprise, Spark couldn't
 We weren't much worried about this. Since data was already in json, with our prior experience with MongoDB, we knew we only had to push it HBase and it would store it. Atleast that is what we believed would happen. But to our surprise, that wasn't the case. Even though, the data is in json format, we had to extract individual fields from it and build the entire structure again. But then we thought, that shuoldn't be a problem. Being python users, we knew, it is not a big challange to convert json formatted string to a json object. Spark should be able to do that. And Spark could, but only if you are reading the data from json file and not from Kafka topic. So now we had to build schema for all our data sources and tell Spark to use s specific schema to parse specific data. Imagine doing this for tens of different data sources and each data source requiring multiple json schemas to parse the infomration.
 
 #### Structured Data Storage
+
 Now that we are done with parsing, we can store the data to HBase. But there is a catch. HBase cannot infer schema from the data and it needs the table to be created beforhand with all the columns families and columns qualifiers that could possibly be present in the data. And people who use HBase, they never interact with it directly. As a best practice, they user Apache Phoenix, which presents a HBase's No-SQL tables and RDBMS tables, where colums are not interleaved as families and quilifiers. Instead, you get to see a traditional, flat RDBMS table structure. This beats the whole purpose of having a No-SQL database, as you will have to treat it as RDBMS data store. Also if we just start sending the data to HBase directly, then it will store data in one of the servers in the cluster and not in the distributed manner as we intended it to. This will affect the speed while quering the data and will not be fault tolerent. If server goes down, all the data will be lost. In order the data to be distributed across cluster, we had to create additioncal columns based upon which the data will be distibuted while being stored. Apperantly, using HBase involved a lot of engineering overhead where we did not want to invest our time in. So We dropped the idea of using HBase as our storage.
 
 Now That we realized, we had to use an SQL-like database, we decided to stick with time-tested and proven good technology and Hive became our preffered choice of storage to store structured data.
 
 #### Data Visualization
+
 Hadoop as a Platform had two options for data visualization :
 1. Zoomdata
 2. Superset
@@ -122,7 +125,7 @@ So we started with a humble architecture:
 We were pleasantly surprised with how easy it was to get the stack up and running. The possibilities were endless and we were about to embark on a journey that would transform the way we monitored our security events.
 
 In the next section we will cover these humble beginnings step-by-step. Until next time.
-
+ 
 **And, always remember**:
 
 > Within infinite myths lies the eternal truth

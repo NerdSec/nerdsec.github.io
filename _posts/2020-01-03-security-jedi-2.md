@@ -32,9 +32,25 @@ Although visualizing this data seems quite straight-forward and easy, there are 
 
     The data clearly lacks context from a Business perspective. It limited to only vulnerability specific information and not really any information that makes it relevant to my environment.
 
-2. 
+2. No Tenable Security Center
 
-But, I don't have/use **Tenable Security Center**. Well, then you could be using Nessus, OpenVAS, or 
+    Obviously, not everyone will be using `TSC`. Well, then you could be using Nessus, OpenVAS, or Qualys. All of them support either CSV reports or pulling it over an API. More on this later in the blog.
+
+## Elastic + Python
+
+In order to solve the challenges that we discussed earlier, we decided to use the best programming language in the world.
+
+    Python + Elastic image
+
+The log ingestion mechanism still holds true. We receive the data over https in Logstash and dump it in a `csv` file using the [file output plugin](https://www.elastic.co/guide/en/logstash/current/plugins-outputs-file.html).
+
+We then consume these `csv` files using scheduled python jobs. We implemented `Django Celery` to do this in our production, but this is a topic for some other blog in itself. For now, let's assume it was a cron job that ran every `5 minutes`.
+
+### Data Processing
+
+Now that we have the csv files in a folder, we can start by listing the files and processing them.
+
+
 
 **And, always remember**:
 

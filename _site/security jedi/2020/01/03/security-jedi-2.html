@@ -305,10 +305,27 @@
 
     <p>The data clearly lacks context from a Business perspective. It limited to only vulnerability specific information and not really any information that makes it relevant to my environment.</p>
   </li>
-  <li></li>
+  <li>
+    <p>No Tenable Security Center</p>
+
+    <p>Obviously, not everyone will be using <code class="language-plaintext highlighter-rouge">TSC</code>. Well, then you could be using Nessus, OpenVAS, or Qualys. All of them support either CSV reports or pulling it over an API. More on this later in the blog.</p>
+  </li>
 </ol>
 
-<p>But, I don’t have/use <strong>Tenable Security Center</strong>. Well, then you could be using Nessus, OpenVAS, or</p>
+<h2 id="elastic--python">Elastic + Python</h2>
+
+<p>In order to solve the challenges that we discussed earlier, we decided to use the best programming language in the world.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Python + Elastic image
+</code></pre></div></div>
+
+<p>The log ingestion mechanism still holds true. We receive the data over https in Logstash and dump it in a <code class="language-plaintext highlighter-rouge">csv</code> file using the <a href="https://www.elastic.co/guide/en/logstash/current/plugins-outputs-file.html">file output plugin</a>.</p>
+
+<p>We then consume these <code class="language-plaintext highlighter-rouge">csv</code> files using scheduled python jobs. We implemented <code class="language-plaintext highlighter-rouge">Django Celery</code> to do this in our production, but this is a topic for some other blog in itself. For now, let’s assume it was a cron job that ran every <code class="language-plaintext highlighter-rouge">5 minutes</code>.</p>
+
+<h3 id="data-processing">Data Processing</h3>
+
+<p>Now that we have the csv files in a folder, we can start by listing the files and processing them.</p>
 
 <p><strong>And, always remember</strong>:</p>
 

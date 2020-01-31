@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-31T16:56:03+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">NerdSec</title><subtitle>A blog covering Python, Data Science, Machine Learning, and Big Data.</subtitle><entry><title type="html">Security Jedi - Chapter 2: Vulnerability Management</title><link href="http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2.html" rel="alternate" type="text/html" title="Security Jedi - Chapter 2: Vulnerability Management" /><published>2020-01-03T00:00:00+05:30</published><updated>2020-01-03T00:00:00+05:30</updated><id>http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2</id><content type="html" xml:base="http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2.html">&lt;p&gt;In a previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it &lt;a href=&quot;/security jedi/2020/01/01/security-jedi-introduction.html&quot;&gt;here&lt;/a&gt; before proceeding.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-31T17:41:14+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">NerdSec</title><subtitle>A blog covering Python, Data Science, Machine Learning, and Big Data.</subtitle><entry><title type="html">Security Jedi - Chapter 2: Vulnerability Management</title><link href="http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2.html" rel="alternate" type="text/html" title="Security Jedi - Chapter 2: Vulnerability Management" /><published>2020-01-03T00:00:00+05:30</published><updated>2020-01-03T00:00:00+05:30</updated><id>http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2</id><content type="html" xml:base="http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2.html">&lt;p&gt;In a previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it &lt;a href=&quot;/security jedi/2020/01/01/security-jedi-introduction.html&quot;&gt;here&lt;/a&gt; before proceeding.&lt;/p&gt;
 
 &lt;p&gt;Today, we will cover the origins of our &lt;strong&gt;Cyber Security Analytics&lt;/strong&gt; platform. The first use case for implementing this stack was actually quite different. Vulnerability Management.&lt;/p&gt;
 
@@ -26,10 +26,27 @@
 
     &lt;p&gt;The data clearly lacks context from a Business perspective. It limited to only vulnerability specific information and not really any information that makes it relevant to my environment.&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;No Tenable Security Center&lt;/p&gt;
+
+    &lt;p&gt;Obviously, not everyone will be using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TSC&lt;/code&gt;. Well, then you could be using Nessus, OpenVAS, or Qualys. All of them support either CSV reports or pulling it over an API. More on this later in the blog.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;But, I don’t have/use &lt;strong&gt;Tenable Security Center&lt;/strong&gt;. Well, then you could be using Nessus, OpenVAS, or&lt;/p&gt;
+&lt;h2 id=&quot;elastic--python&quot;&gt;Elastic + Python&lt;/h2&gt;
+
+&lt;p&gt;In order to solve the challenges that we discussed earlier, we decided to use the best programming language in the world.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Python + Elastic image
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The log ingestion mechanism still holds true. We receive the data over https in Logstash and dump it in a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;csv&lt;/code&gt; file using the &lt;a href=&quot;https://www.elastic.co/guide/en/logstash/current/plugins-outputs-file.html&quot;&gt;file output plugin&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We then consume these &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;csv&lt;/code&gt; files using scheduled python jobs. We implemented &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Django Celery&lt;/code&gt; to do this in our production, but this is a topic for some other blog in itself. For now, let’s assume it was a cron job that ran every &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;5 minutes&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;data-processing&quot;&gt;Data Processing&lt;/h3&gt;
+
+&lt;p&gt;Now that we have the csv files in a folder, we can start by listing the files and processing them.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;And, always remember&lt;/strong&gt;:&lt;/p&gt;
 
@@ -105,23 +122,38 @@
 
 &lt;p&gt;So, we had data that was parsed. A &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;json&lt;/code&gt; structured stream of data (more on how we did this later). The integration was supposed to be a breeze, would it though?&lt;/p&gt;
 
-&lt;p&gt;Kafka chugged down the data like a champ. Now, we needed to store this data.&lt;/p&gt;
+&lt;p&gt;Kafka chugged down the data like a champ. Now, we needed to store this data. Now that we were using Apache stack, there were quite a few options. We could use HDFS. We could use Hive. We could use Hbase. Since data was already in a json format, we decided that we will go for a No-SQL data store. And Apache HBase was the ultimate choice. We had data in Kafka and it was only the matter of time that we store it in to HBase and start using it for analytics. But how do we send data to Hbase? So we started evaluating our options for ingestion framework.&lt;/p&gt;
 
-&lt;p&gt;Since data is already in json format we decided to user No-SQL database to store the data assuming that it will be schemaless and we don’t have to define anything before we start storing the data. But sooner, we realized, that is not the case. We still have to define data structure. Moreover We have to put effort in engineering so that data is equally distributed across data storage. Then we have to use a middle layer which makes No-SQL looks like SQL to simplify data ingestion. So we gave up on No-SQL storage and decided to use Hive since it is more established and was in use by other teams. But what we wanted to do is to use the data for anlytics and apperently hive was very slow for this task. So now we have to use Druid in order to 
-have analytics at speed and to visualize it with Superset. Next task was to take data from hive table and send it to Druid index where it will be aggregated before storing. One simple task of ingesting the data and visualizing it involved so many componants and intricacies.&lt;/p&gt;
+&lt;h4 id=&quot;data-ingestion&quot;&gt;Data Ingestion&lt;/h4&gt;
 
-&lt;p&gt;Kafka -&amp;gt; HBase&lt;/p&gt;
+&lt;p&gt;As most of the users of Apache Stack would do, we were suggested to go for NiFi. Being a dataflow management platform, It had plethora of options to ingest from, process and forward data to variety of platforms. So we decided to give it a try. But sadly, it could not handle the volume and speed at which the data was being fed and end up being slow.&lt;/p&gt;
 
-&lt;p&gt;Challenges:&lt;/p&gt;
+&lt;p&gt;So we heard there is A Spark and it is supposed to be super fast. Almost 100x faster than other data processing tools and Map-Reduce jobs. Plus, it supported Python. Apperantly it had all the qualities that we were looking for. We decide to give it a try.&lt;/p&gt;
 
+&lt;p&gt;Getting started with Spark was not an easy task. To our surprise, Spark couldn’t communicate with Kafka. It did not know, how to talks to it and pull or push data to topic. To enable spark to communicate with Kafka,we had to tell it, at runtime, which external java archives to load in order to be able to read data from and push data to topic. And once we did that, we saw that it was truely fast. And we decided to stick with it for ingesting the data.&lt;/p&gt;
+
+&lt;h4 id=&quot;data-parsing&quot;&gt;Data Parsing&lt;/h4&gt;
+&lt;p&gt;We weren’t much worried about this. Since data was already in json, with our prior experience with MongoDB, we knew we only had to push it HBase and it would store it. Atleast that is what we believed would happen. But to our surprise, that wasn’t the case. Even though, the data is in json format, we had to extract individual fields from it and build the entire structure again. But then we thought, that shuoldn’t be a problem. Being python users, we knew, it is not a big challange to convert json formatted string to a json object. Spark should be able to do that. And Spark could, but only if you are reading the data from json file and not from Kafka topic. So now we had to build schema for all our data sources and tell Spark to use s specific schema to parse specific data. Imagine doing this for tens of different data sources and each data source requiring multiple json schemas to parse the infomration.&lt;/p&gt;
+
+&lt;h4 id=&quot;structured-data-storage&quot;&gt;Structured Data Storage&lt;/h4&gt;
+
+&lt;p&gt;Now that we are done with parsing, we can store the data to HBase. But there is a catch. HBase cannot infer schema from the data and it needs the table to be created beforhand with all the columns families and columns qualifiers that could possibly be present in the data. And people who use HBase, they never interact with it directly. As a best practice, they user Apache Phoenix, which presents a HBase’s No-SQL tables and RDBMS tables, where colums are not interleaved as families and quilifiers. Instead, you get to see a traditional, flat RDBMS table structure. This beats the whole purpose of having a No-SQL database, as you will have to treat it as RDBMS data store. Also if we just start sending the data to HBase directly, then it will store data in one of the servers in the cluster and not in the distributed manner as we intended it to. This will affect the speed while quering the data and will not be fault tolerent. If server goes down, all the data will be lost. In order the data to be distributed across cluster, we had to create additioncal columns based upon which the data will be distibuted while being stored. Apperantly, using HBase involved a lot of engineering overhead where we did not want to invest our time in. So We dropped the idea of using HBase as our storage.&lt;/p&gt;
+
+&lt;p&gt;Now That we realized, we had to use an SQL-like database, we decided to stick with time-tested and proven good technology and Hive became our preffered choice of storage to store structured data.&lt;/p&gt;
+
+&lt;h4 id=&quot;data-visualization&quot;&gt;Data Visualization&lt;/h4&gt;
+
+&lt;p&gt;Hadoop as a Platform had two options for data visualization :&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;Engg efforts&lt;/li&gt;
-  &lt;li&gt;Pheonix - Define a mapping -&amp;gt; back to RDBMS?&lt;/li&gt;
-  &lt;li&gt;Why not HIVE if mapping to be done. More established and already in use by teams.&lt;/li&gt;
-  &lt;li&gt;But analytics not efficient in HIVE&lt;/li&gt;
-  &lt;li&gt;DRUID for analytics. -&amp;gt; Spark job to aggregate and send data to DRUID&lt;/li&gt;
-  &lt;li&gt;Superset for visualizing data in DRUID.&lt;/li&gt;
+  &lt;li&gt;Zoomdata&lt;/li&gt;
+  &lt;li&gt;Superset&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;p&gt;We looked at zoomdata and Superset, and decided to go with Superset looking at its large base of visualization libraries. We started building visualizations and dashboards. But it was very slow. We connected our visualizations to Hive tables and as data started growing the response from hive started getting slower. Again, the efforts to build fast analytics went in vein. Then we came to know about Druid. This is suppose to be a weapon of choice if you want to do analytics on big data. So now we had to create “Hypercubes” from our data, which is basiccaly data aggregation based upon fields to monitor and metrics to be measured. But the problem with Druid is, it doesn’t have an access control mechanism. Once the data is indexed, anybody can make web api calls and access the data. To avoid this we had to create external tables in hive, which points to an index in Druid. And there should be no other way to access indexes from Druid. This allowed us to leverage access control from hive to safeguard data in Druid. Now that this problem is solved, we can start sending data to Druid. But again, neither Hive and send data to Druid nor Druid can read data from Hive. We had to write Spark jobs that will pickup data from Hive internal table and push it to hive external table pointing to Druid index.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Add closure explaining efforts that involved in onboarding the data and number of componants to be managed to keep the pipeline up and running&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h2 id=&quot;humble-beginnings&quot;&gt;Humble Beginnings&lt;/h2&gt;
 
