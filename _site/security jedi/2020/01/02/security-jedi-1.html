@@ -11,7 +11,7 @@
 
     
 
-    <title>Security Jedi: SIEM - Chapter 1</title>
+    <title>Security Jedi - Chapter 1: SIEM</title>
 
     
       <!-- Update your html tag to include the itemscope and itemtype attributes. -->
@@ -30,15 +30,17 @@
 
 <!-- Place this data between the <head> tags of your website -->
 
-<meta name="description" content="In the previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it here befo..." />
+  <meta name="author" content="Nachiket Vartak &amp; Darshan Parab">
+
+<meta name="description" content="In a previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it here before..." />
 
 
 
 
 
 <!-- Schema.org markup for Google+ -->
-<meta itemprop="name" content="Security Jedi: SIEM - Chapter 1">
-<meta itemprop="description" content="In the previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it here befo...">
+<meta itemprop="name" content="Security Jedi - Chapter 1: SIEM">
+<meta itemprop="description" content="In a previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it here before...">
 
   <meta itemprop="image" content="http://localhost:4000">
 
@@ -48,8 +50,8 @@
 
 
 
-<meta name="twitter:title" content="Security Jedi: SIEM - Chapter 1">
-<meta name="twitter:description" content="In the previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it here befo...">
+<meta name="twitter:title" content="Security Jedi - Chapter 1: SIEM">
+<meta name="twitter:description" content="In a previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it here before...">
 
 
 
@@ -61,13 +63,13 @@
 <meta property="twitter:url" content="http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html">
 
 <!-- Open Graph data -->
-<meta property="og:title" content="Security Jedi: SIEM - Chapter 1" />
+<meta property="og:title" content="Security Jedi - Chapter 1: SIEM" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html" />
 
   <meta property="og:image" content="http://localhost:4000" />
 
-<meta property="og:description" content="In the previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it here befo..." />
+<meta property="og:description" content="In a previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it here before..." />
 <meta property="og:site_name" content="NerdSec" />
 
   <meta property="article:published_time" content="2020-01-02T00:00:00+05:30" />
@@ -217,7 +219,7 @@
     
 
     <section class="page-header">
-      <h1 class="project-name">Security Jedi: SIEM - Chapter 1</h1>
+      <h1 class="project-name">Security Jedi - Chapter 1: SIEM</h1>
       <h2 class="project-tagline"></h2>
       <!--  -->
 
@@ -236,6 +238,8 @@
         </time>
         
         
+          • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Nachiket Vartak &amp; Darshan Parab</span></span>
+        
 
         </h2>
       
@@ -247,12 +251,14 @@
       <article itemscope itemtype="http://schema.org/BlogPosting">
 
   <!-- <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Security Jedi: SIEM - Chapter 1</h1>
+    <h1 class="post-title" itemprop="name headline">Security Jedi - Chapter 1: SIEM</h1>
     <p class="post-meta">
       <time datetime="2020-01-02T00:00:00+05:30" itemprop="datePublished">
         
         Jan 2, 2020
       </time>
+      
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Nachiket Vartak & Darshan Parab</span></span>
       </p>
   </header> -->
 
@@ -266,7 +272,9 @@
 </div>
 
   <div itemprop="articleBody">
-    <p>In the previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it <a href="https://google.com">here</a> before proceeding.</p>
+    <p>In a previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it <a href="/security%20jedi/2020/01/01/security-jedi-introduction.html">here</a> before proceeding.</p>
+
+<p>In this, blog we will begin the journey with the most basic requirment of a security analyst, effective monitoring.</p>
 
 <h2 id="siem---hero-or-villain">SIEM - Hero or Villain?</h2>
 
@@ -353,10 +361,9 @@ have analytics at speed and to visualize it with Superset. Next task was to take
   <p><strong>Message from Yoda</strong>: May the force be with you!</p>
 </blockquote>
 
-<h2 id="elastic-snake">Elastic Snake</h2>
+<h2 id="elastic---a-young-jedi">Elastic - A Young Jedi</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Elastic image here
-</code></pre></div></div>
+<p><img src="/assets/images/elasticstack.png" alt="Elastic stack"></p>
 
 <p>Like all good superhero movies, where a hero has humble beginnings, our story has a similar outline. Aggregating <code class="language-plaintext highlighter-rouge">Vulnerability Management</code> data (<code class="language-plaintext highlighter-rouge">VM</code>) was a bit of a challenge using the traditional RDBMS systems. It just does not scale when you have a few thousand servers with a gazillion vulnerabilities.</p>
 
@@ -412,15 +419,15 @@ have analytics at speed and to visualize it with Superset. Next task was to take
 <a class="f" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-facebook-official fa"></i><span> 
 facebook</span></a>
 
-<a class="t" href="https://twitter.com/intent/tweet?text=Security%20Jedi:%20SIEM%20-%20Chapter%201&amp;url=http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter fa"></i><span>twitter</span></a>
+<a class="t" href="https://twitter.com/intent/tweet?text=Security%20Jedi%20-%20Chapter%201:%20SIEM&amp;url=http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter fa"></i><span>twitter</span></a>
         
 <a class="g" href="https://plus.google.com/share?url=http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-google-plus fa"></i><span>google</span></a>
         
 <a class="r" href="http://www.reddit.com/submit?url=http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html" onclick="window.open(this.href, 'mywin','left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-reddit fa"></i><span> reddit</span></a>
 
-<a class="l" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html&amp;title=Security%20Jedi:%20SIEM%20-%20Chapter%201&amp;summary=" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-linkedin fa"></i><span>linkedin</span></a>
+<a class="l" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html&amp;title=Security%20Jedi%20-%20Chapter%201:%20SIEM&amp;summary=" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-linkedin fa"></i><span>linkedin</span></a>
 
-<a class="e" href="mailto:?subject=Security%20Jedi:%20SIEM%20-%20Chapter%201&amp;body=Check%20out%20this%20site%20http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html"><i class="fa fa-envelope fa"></i><span> email</span></a>                          
+<a class="e" href="mailto:?subject=Security%20Jedi%20-%20Chapter%201:%20SIEM&amp;body=Check%20out%20this%20site%20http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html"><i class="fa fa-envelope fa"></i><span> email</span></a>                          
 </div>
 
 

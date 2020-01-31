@@ -1,4 +1,53 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-31T14:02:27+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">NerdSec</title><subtitle>A blog covering Python, Data Science, Machine Learning, and Big Data.</subtitle><entry><title type="html">Security Jedi: SIEM - Chapter 1</title><link href="http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html" rel="alternate" type="text/html" title="Security Jedi: SIEM - Chapter 1" /><published>2020-01-02T00:00:00+05:30</published><updated>2020-01-02T00:00:00+05:30</updated><id>http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1</id><content type="html" xml:base="http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html">&lt;p&gt;In the previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it &lt;a href=&quot;https://google.com&quot;&gt;here&lt;/a&gt; before proceeding.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-31T16:56:03+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">NerdSec</title><subtitle>A blog covering Python, Data Science, Machine Learning, and Big Data.</subtitle><entry><title type="html">Security Jedi - Chapter 2: Vulnerability Management</title><link href="http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2.html" rel="alternate" type="text/html" title="Security Jedi - Chapter 2: Vulnerability Management" /><published>2020-01-03T00:00:00+05:30</published><updated>2020-01-03T00:00:00+05:30</updated><id>http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2</id><content type="html" xml:base="http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2.html">&lt;p&gt;In a previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it &lt;a href=&quot;/security jedi/2020/01/01/security-jedi-introduction.html&quot;&gt;here&lt;/a&gt; before proceeding.&lt;/p&gt;
+
+&lt;p&gt;Today, we will cover the origins of our &lt;strong&gt;Cyber Security Analytics&lt;/strong&gt; platform. The first use case for implementing this stack was actually quite different. Vulnerability Management.&lt;/p&gt;
+
+&lt;h2 id=&quot;vulnerability-management-automation&quot;&gt;Vulnerability Management Automation&lt;/h2&gt;
+
+&lt;p&gt;Vulnerabilities are the biggest issue in Cyber Security. There are almost &lt;a href=&quot;https://www.cvedetails.com/browse-by-date.php&quot;&gt;30-40&lt;/a&gt; vulnerabilities discovered each day. Managing these, in an environment with a few thousand assets can seem quite daunting. There is simply too much data. Many times, a few of these vulnerabilities fall through the cracks of patch management and then are later used in a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Red Team&lt;/code&gt; engagement. Yes, we have all been there.&lt;/p&gt;
+
+&lt;p&gt;So, we decided to automate the entire excercise. What if we could put the ownership of all these vulnerabilities on the individual stakeholders? Let them have a view of how horrible the situation is for their assets.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-beginning&quot;&gt;The Beginning&lt;/h2&gt;
+
+&lt;p&gt;We started with a quite simple architecture. We used the native &lt;a href=&quot;https://docs.tenable.com/sccv/Content/PublishingSitesSettings.htm&quot;&gt;report publishing&lt;/a&gt; feature present in Tenable. This allowed us to send the Vulnerability data over &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https&lt;/code&gt; to a webserver.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/architecture.png&quot; alt=&quot;VM Architecture&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We then used Logstash &lt;a href=&quot;https://www.elastic.co/guide/en/logstash/current/plugins-inputs-http.html&quot;&gt;http input&lt;/a&gt;, to receive this data and then forward it to Elasticsearch. Then it was a simple matter of visualizing the data in Kibana and showing it to the world (just kidding).&lt;/p&gt;
+
+&lt;h2 id=&quot;issues&quot;&gt;Issues&lt;/h2&gt;
+
+&lt;p&gt;Although visualizing this data seems quite straight-forward and easy, there are some challenges with this approach:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Context&lt;/p&gt;
+
+    &lt;p&gt;The data clearly lacks context from a Business perspective. It limited to only vulnerability specific information and not really any information that makes it relevant to my environment.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;But, I don’t have/use &lt;strong&gt;Tenable Security Center&lt;/strong&gt;. Well, then you could be using Nessus, OpenVAS, or&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;And, always remember&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Within infinite myths lies the eternal truth&lt;/p&gt;
+
+  &lt;p&gt;Who sees it all?&lt;/p&gt;
+
+  &lt;p&gt;Varuna has but a thousand eyes,&lt;/p&gt;
+
+  &lt;p&gt;Indra has a hundred,&lt;/p&gt;
+
+  &lt;p&gt;You and I, only two.&lt;/p&gt;
+
+  &lt;p&gt;-Devdutt Patnaik&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Nachiket Vartak &amp; Darshan Parab</name></author><category term="Big Data" /><category term="Vulnerability Management" /><summary type="html">In a previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it here before proceeding.</summary></entry><entry><title type="html">Security Jedi - Chapter 1: SIEM</title><link href="http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html" rel="alternate" type="text/html" title="Security Jedi - Chapter 1: SIEM" /><published>2020-01-02T00:00:00+05:30</published><updated>2020-01-02T00:00:00+05:30</updated><id>http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1</id><content type="html" xml:base="http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html">&lt;p&gt;In a previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it &lt;a href=&quot;/security jedi/2020/01/01/security-jedi-introduction.html&quot;&gt;here&lt;/a&gt; before proceeding.&lt;/p&gt;
+
+&lt;p&gt;In this, blog we will begin the journey with the most basic requirment of a security analyst, effective monitoring.&lt;/p&gt;
 
 &lt;h2 id=&quot;siem---hero-or-villain&quot;&gt;SIEM - Hero or Villain?&lt;/h2&gt;
 
@@ -84,10 +133,9 @@ have analytics at speed and to visualize it with Superset. Next task was to take
   &lt;p&gt;&lt;strong&gt;Message from Yoda&lt;/strong&gt;: May the force be with you!&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;elastic-snake&quot;&gt;Elastic Snake&lt;/h2&gt;
+&lt;h2 id=&quot;elastic---a-young-jedi&quot;&gt;Elastic - A Young Jedi&lt;/h2&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Elastic image here
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/elasticstack.png&quot; alt=&quot;Elastic stack&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Like all good superhero movies, where a hero has humble beginnings, our story has a similar outline. Aggregating &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Vulnerability Management&lt;/code&gt; data (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VM&lt;/code&gt;) was a bit of a challenge using the traditional RDBMS systems. It just does not scale when you have a few thousand servers with a gazillion vulnerabilities.&lt;/p&gt;
 
@@ -130,7 +178,7 @@ have analytics at speed and to visualize it with Superset. Next task was to take
   &lt;p&gt;You and I, only two.&lt;/p&gt;
 
   &lt;p&gt;-Devdutt Patnaik&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name></name></author><category term="Big Data" /><summary type="html">In the previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it here before proceeding.</summary></entry><entry><title type="html">Security Jedi - Introduction</title><link href="http://localhost:4000/security%20jedi/2020/01/01/security-jedi-introduction.html" rel="alternate" type="text/html" title="Security Jedi - Introduction" /><published>2020-01-01T00:00:00+05:30</published><updated>2020-01-01T00:00:00+05:30</updated><id>http://localhost:4000/security%20jedi/2020/01/01/security-jedi-introduction</id><content type="html" xml:base="http://localhost:4000/security%20jedi/2020/01/01/security-jedi-introduction.html">&lt;p&gt;Security is an ever evolving field, where the threats and its detection mechanisms are ever evolving. In such a field the pressure on the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Blue Team&lt;/code&gt; is far greater than that on the adversary. For, as a defender, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Blue Team&lt;/code&gt; has to always get it right; while the adversary has to get it right just once!&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Nachiket Vartak &amp; Darshan Parab</name></author><category term="Big Data" /><summary type="html">In a previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it here before proceeding.</summary></entry><entry><title type="html">Security Jedi - Introduction</title><link href="http://localhost:4000/security%20jedi/2020/01/01/security-jedi-introduction.html" rel="alternate" type="text/html" title="Security Jedi - Introduction" /><published>2020-01-01T00:00:00+05:30</published><updated>2020-01-01T00:00:00+05:30</updated><id>http://localhost:4000/security%20jedi/2020/01/01/security-jedi-introduction</id><content type="html" xml:base="http://localhost:4000/security%20jedi/2020/01/01/security-jedi-introduction.html">&lt;p&gt;Security is an ever evolving field, where the threats and its detection mechanisms are ever evolving. In such a field the pressure on the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Blue Team&lt;/code&gt; is far greater than that on the adversary. For, as a defender, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Blue Team&lt;/code&gt; has to always get it right; while the adversary has to get it right just once!&lt;/p&gt;
 
 &lt;h2 id=&quot;problems-compounded&quot;&gt;Problems Compounded&lt;/h2&gt;
 
@@ -190,7 +238,7 @@ have analytics at speed and to visualize it with Superset. Next task was to take
   &lt;p&gt;You and I, only two.&lt;/p&gt;
 
   &lt;p&gt;-Devdutt Patnaik&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name></name></author><category term="Big Data" /><category term="SIEM" /><summary type="html">Security is an ever evolving field, where the threats and its detection mechanisms are ever evolving. In such a field the pressure on the Blue Team is far greater than that on the adversary. For, as a defender, the Blue Team has to always get it right; while the adversary has to get it right just once!</summary></entry><entry><title type="html">Pandas Introduction</title><link href="http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html" rel="alternate" type="text/html" title="Pandas Introduction" /><published>2019-05-05T00:00:00+05:30</published><updated>2019-05-05T00:00:00+05:30</updated><id>http://localhost:4000/data%20science/2019/05/05/pandas-introduction</id><content type="html" xml:base="http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html">&lt;p&gt;In this post, we will try to get a basic idea about what exactly is pandas, and how we can use this library to grapple with data efficiently:&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Nachiket Vartak &amp; Darshan Parab</name></author><category term="Big Data" /><category term="SIEM" /><summary type="html">Security is an ever evolving field, where the threats and its detection mechanisms are ever evolving. In such a field the pressure on the Blue Team is far greater than that on the adversary. For, as a defender, the Blue Team has to always get it right; while the adversary has to get it right just once!</summary></entry><entry><title type="html">Pandas Introduction</title><link href="http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html" rel="alternate" type="text/html" title="Pandas Introduction" /><published>2019-05-05T00:00:00+05:30</published><updated>2019-05-05T00:00:00+05:30</updated><id>http://localhost:4000/data%20science/2019/05/05/pandas-introduction</id><content type="html" xml:base="http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html">&lt;p&gt;In this post, we will try to get a basic idea about what exactly is pandas, and how we can use this library to grapple with data efficiently:&lt;/p&gt;
 
 &lt;p&gt;Pandas is a library that allows you to perform data analysis with ease and great performance at the same time.
 We will try to touch on two basic concepts of pandas.&lt;/p&gt;

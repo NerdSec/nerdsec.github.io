@@ -1,11 +1,14 @@
 ---
 layout: post
-title: "Security Jedi: SIEM - Chapter 1"
+title: "Security Jedi - Chapter 1: SIEM"
 categories: ["Security Jedi"]
 tags: ["Big Data"]
+author: Nachiket Vartak & Darshan Parab
 ---
 
-In the previous blog we have covered the motivation for starting this series. In case, you haven't read it yet, I urge you to first read it [here](https://google.com) before proceeding.
+In a previous blog we have covered the motivation for starting this series. In case, you haven't read it yet, I urge you to first read it [here](/security jedi/2020/01/01/security-jedi-introduction.html) before proceeding.
+
+In this, blog we will begin the journey with the most basic requirment of a security analyst, effective monitoring.
 
 ## SIEM - Hero or Villain?
 
@@ -83,9 +86,9 @@ But there was already something we were using. A tool for automating the `Vulner
 
 > **Message from Yoda**: May the force be with you!
 
-## Elastic Snake
+## Elastic - A Young Jedi
 
-    Elastic image here
+![Elastic stack](/assets/images/elasticstack.png)
 
 Like all good superhero movies, where a hero has humble beginnings, our story has a similar outline. Aggregating `Vulnerability Management` data (`VM`) was a bit of a challenge using the traditional RDBMS systems. It just does not scale when you have a few thousand servers with a gazillion vulnerabilities.
 

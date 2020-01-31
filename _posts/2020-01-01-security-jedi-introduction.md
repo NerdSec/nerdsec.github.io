@@ -3,6 +3,7 @@ layout: post
 title: "Security Jedi - Introduction"
 categories: ["Security Jedi"]
 tags: ["Big Data", "SIEM"]
+author: Nachiket Vartak & Darshan Parab
 ---
 
 Security is an ever evolving field, where the threats and its detection mechanisms are ever evolving. In such a field the pressure on the `Blue Team` is far greater than that on the adversary. For, as a defender, the `Blue Team` has to always get it right; while the adversary has to get it right just once!
