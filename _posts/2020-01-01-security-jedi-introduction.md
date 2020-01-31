@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Security Jedi Series - Introduction"
-categories: ["Beginner's Guide"]
+title: "Security Jedi - Introduction"
+categories: ["Security Jedi"]
 tags: ["Big Data", "SIEM"]
 ---
 
@@ -16,7 +16,7 @@ In such a scenario, a defender needs to make his job as simple and fast as he ca
 
 ### Scalability
 
-As the volume of data gets larger the robustness of a platform built on a custom DB or a traditional RDBMS takes a hit. Plus it get really expensive to buy special appliances or pay for an additional license to handle that extra data.
+As the volume of data gets larger the robustness of a platform built on a custom DB or a traditional RDBMS takes a hit. Plus it gets really expensive to buy special appliances or pay for an additional license to handle that extra data.
 
 ### Search
 
@@ -42,6 +42,11 @@ It is one thing to decide to build our own **Cyber Security Analytics** platform
 
 This blog is a series of posts that covers this journey. It is a highly subjective reflection of our thoughts and ideas and in no way reflects any other entity or organization. We hope that this series turns out to be of some help to someone who wants to emulate this journey or some portion of it. In the next blog we will cover the humble beginnings of our stack and why we chose it.
 
+## Security Jedi Series
+* [Chapter 1](/security jedi/2020/01/02/security-jedi-1.html)
+
+**And, always remember**:
+
 > Within infinite myths lies the eternal truth
 >
 > Who sees it all?
@@ -53,5 +58,3 @@ This blog is a series of posts that covers this journey. It is a highly subjecti
 > You and I, only two.
 >
 > -Devdutt Patnaik
-
-![Read Chapter 1 - here]()

@@ -1,9 +1,11 @@
 ---
 layout: post
-title: "Security Jedi Series - Chapter 1"
-categories: ["Beginner's Guide"]
-tags: "Big Data"
+title: "Security Jedi: SIEM - Chapter 1"
+categories: ["Security Jedi"]
+tags: ["Big Data"]
 ---
+
+In the previous blog we have covered the motivation for starting this series. In case, you haven't read it yet, I urge you to first read it [here](https://google.com) before proceeding.
 
 ## SIEM - Hero or Villain?
 
@@ -34,7 +36,8 @@ Our **SIEM**, was quite easy to use. I will concede that much. But, boy was she 
 
 Then came the oracle, use a big data stack to solve this problem. Some **SIEM**, tried to jump on this band wagon and disguise themselves as a Big Data platform. Some tried to sell themself as an augmented solution sitting alongside your **Big Data** stack. Some ignored it, hoping that you would forget about it and finally see the light (or darkness). While some platforms truly did make that switch or better still, were designed with those principles in mind.
 
-    insert big data image
+![Apache Architecture](/assets/images/bigdata.jpg)
+<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@ev?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from ev"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">ev</span></a>
 
 ### Pretenders and Survivors
 
@@ -44,19 +47,19 @@ While we could write an entire book if we were to cover all the Medusas; but we 
 
 So, if you are still reading this, that means you are one of us. And, like a true **Jedi** we will forge a path with our light and fight the Dark-side. But wait, what should we use to defeat the **Sith**?
 
-The choices were many, and choosing a weapon meant, we had to _use it_. And we did, just that. Thank us later!
+![Elastic&Hadoop](/assets/images/elastichadoop.png)
 
-    image of elastic plus other technologies
+The choices were many, and choosing a weapon meant, we had to _use it_. And we did, just that. Thank us later!
 
 ### Apache - Bees, Elephants, Mahouts and Friends
 
-    image of apache stack
-
 So, let's start with the _Elephant_ in the room, pun intended. The stack was in place, a team was managing it, it had all the bells and whistles. Would it be love at first sight? Maybe.
+
+![Apache Architecture](/assets/images/bigdatastack.png)
 
 So, we had data that was parsed. A `json` structured stream of data (more on how we did this later). The integration was supposed to be a breeze, would it though?
 
-Kafka chugged down the data like a champ. Now, we needed to store this data
+Kafka chugged down the data like a champ. Now, we needed to store this data.
 
 Since data is already in json format we decided to user No-SQL database to store the data assuming that it will be schemaless and we don't have to define anything before we start storing the data. But sooner, we realized, that is not the case. We still have to define data structure. Moreover We have to put effort in engineering so that data is equally distributed across data storage. Then we have to use a middle layer which makes No-SQL looks like SQL to simplify data ingestion. So we gave up on No-SQL storage and decided to use Hive since it is more established and was in use by other teams. But what we wanted to do is to use the data for anlytics and apperently hive was very slow for this task. So now we have to use Druid in order to 
 have analytics at speed and to visualize it with Superset. Next task was to take data from hive table and send it to Druid index where it will be aggregated before storing. One simple task of ingesting the data and visualizing it involved so many componants and intricacies.
@@ -101,11 +104,13 @@ Elastic stack was a perfect alternative. It had all the needed features:
 
 So we started with a humble architecture:
 
-    image of initial architecture
+![VM Architecture](/assets/images/architecture.png)
 
 We were pleasantly surprised with how easy it was to get the stack up and running. The possibilities were endless and we were about to embark on a journey that would transform the way we monitored our security events.
 
 In the next section we will cover these humble beginnings step-by-step. Until next time.
+
+**And, always remember**:
 
 > Within infinite myths lies the eternal truth
 >

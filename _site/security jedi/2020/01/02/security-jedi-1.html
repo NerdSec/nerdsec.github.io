@@ -11,7 +11,7 @@
 
     
 
-    <title>Security Jedi - Chapter 1</title>
+    <title>Security Jedi: SIEM - Chapter 1</title>
 
     
       <!-- Update your html tag to include the itemscope and itemtype attributes. -->
@@ -30,15 +30,15 @@
 
 <!-- Place this data between the <head> tags of your website -->
 
-<meta name="description" content="SIEM - Hero or Villain?" />
+<meta name="description" content="In the previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it here befo..." />
 
 
 
 
 
 <!-- Schema.org markup for Google+ -->
-<meta itemprop="name" content="Security Jedi - Chapter 1">
-<meta itemprop="description" content="SIEM - Hero or Villain?">
+<meta itemprop="name" content="Security Jedi: SIEM - Chapter 1">
+<meta itemprop="description" content="In the previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it here befo...">
 
   <meta itemprop="image" content="http://localhost:4000">
 
@@ -48,8 +48,8 @@
 
 
 
-<meta name="twitter:title" content="Security Jedi - Chapter 1">
-<meta name="twitter:description" content="SIEM - Hero or Villain?">
+<meta name="twitter:title" content="Security Jedi: SIEM - Chapter 1">
+<meta name="twitter:description" content="In the previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it here befo...">
 
 
 
@@ -58,19 +58,19 @@
   <meta name="twitter:image:src" content="http://localhost:4000">
   <meta property="twitter:image" content="http://localhost:4000">
 
-<meta property="twitter:url" content="http://localhost:4000/beginner's%20guide/2020/01/01/security-jedi-1.html">
+<meta property="twitter:url" content="http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html">
 
 <!-- Open Graph data -->
-<meta property="og:title" content="Security Jedi - Chapter 1" />
+<meta property="og:title" content="Security Jedi: SIEM - Chapter 1" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:4000/beginner's%20guide/2020/01/01/security-jedi-1.html" />
+<meta property="og:url" content="http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html" />
 
   <meta property="og:image" content="http://localhost:4000" />
 
-<meta property="og:description" content="SIEM - Hero or Villain?" />
+<meta property="og:description" content="In the previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it here befo..." />
 <meta property="og:site_name" content="NerdSec" />
 
-  <meta property="article:published_time" content="2020-01-01T00:00:00+05:30" />
+  <meta property="article:published_time" content="2020-01-02T00:00:00+05:30" />
 
 
 
@@ -84,9 +84,7 @@
 
 
   
-    <meta property="article:tag" content="Big">
-  
-    <meta property="article:tag" content="Data">
+    <meta property="article:tag" content="Big Data">
   
 
 
@@ -94,7 +92,7 @@
 
 
   
-    <meta property="article:tag" content="Beginner&#39;s Guide">
+    <meta property="article:tag" content="Security Jedi">
   
 
 
@@ -102,7 +100,7 @@
 
     
 
-    <link rel="canonical" href="http://localhost:4000/beginner's%20guide/2020/01/01/security-jedi-1.html">
+    <link rel="canonical" href="http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html">
 
     
 
@@ -114,7 +112,7 @@
 
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/assets/css/style.css?v=44f5810b0ac108bff33129262561aabac03d58e6">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7094570e0df6d6371303c0f4a6f3984e1a56ed61">
   </head>
   <body>
 
@@ -142,13 +140,13 @@
 
     
       <nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
         <label for="nav-trigger">
           <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
             </svg>
           </span>
         </label>
@@ -219,22 +217,22 @@
     
 
     <section class="page-header">
-      <h1 class="project-name">Security Jedi - Chapter 1</h1>
+      <h1 class="project-name">Security Jedi: SIEM - Chapter 1</h1>
       <h2 class="project-tagline"></h2>
       <!--  -->
 
       
       
-        <a href="/categories/#Beginner's Guide" class="btn">Beginner's Guide</a>
+        <a href="/categories/#Security%20Jedi" class="btn">Security Jedi</a>
       
       
 
       <!-- Post tagline -->
       
         <h2 class="project-date">
-        <time datetime="2020-01-01T00:00:00+05:30" itemprop="datePublished">
+        <time datetime="2020-01-02T00:00:00+05:30" itemprop="datePublished">
           
-          Jan 1, 2020
+          Jan 2, 2020
         </time>
         
         
@@ -249,11 +247,11 @@
       <article itemscope itemtype="http://schema.org/BlogPosting">
 
   <!-- <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Security Jedi - Chapter 1</h1>
+    <h1 class="post-title" itemprop="name headline">Security Jedi: SIEM - Chapter 1</h1>
     <p class="post-meta">
-      <time datetime="2020-01-01T00:00:00+05:30" itemprop="datePublished">
+      <time datetime="2020-01-02T00:00:00+05:30" itemprop="datePublished">
         
-        Jan 1, 2020
+        Jan 2, 2020
       </time>
       </p>
   </header> -->
@@ -262,16 +260,15 @@
   
   <h4>Tags:</h4>
   
-  <a href="/tags/#Big" class="btn">Big</a>
-  &nbsp;
-  
-  <a href="/tags/#Data" class="btn">Data</a>
+  <a href="/tags/#Big%20Data" class="btn">Big Data</a>
   
   
 </div>
 
   <div itemprop="articleBody">
-    <h2 id="siem---hero-or-villain">SIEM - Hero or Villain?</h2>
+    <p>In the previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it <a href="https://google.com">here</a> before proceeding.</p>
+
+<h2 id="siem---hero-or-villain">SIEM - Hero or Villain?</h2>
 
 <p>For the past decade, <strong>SIEM</strong> has been ruining the lives of many SOC Analysts. Just like <strong>Anakin Skywalker</strong>, all <strong>SIEM</strong> technologies started with good intentions. But how over time things have changed. A tool meant to ease the life of an Analyst has now turned out to be his life’s biggest bane.</p>
 
@@ -304,8 +301,9 @@
 
 <p>Then came the oracle, use a big data stack to solve this problem. Some <strong>SIEM</strong>, tried to jump on this band wagon and disguise themselves as a Big Data platform. Some tried to sell themself as an augmented solution sitting alongside your <strong>Big Data</strong> stack. Some ignored it, hoping that you would forget about it and finally see the light (or darkness). While some platforms truly did make that switch or better still, were designed with those principles in mind.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>insert big data image
-</code></pre></div></div>
+<p><img src="/assets/images/bigdata.jpg" alt="Apache Architecture">
+<a style='background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px' href="https://unsplash.com/@ev?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from ev"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewbox="0 0 32 32"><title>unsplash-logo</title>
+<path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">ev</span></a></p>
 
 <h3 id="pretenders-and-survivors">Pretenders and Survivors</h3>
 
@@ -315,25 +313,27 @@
 
 <p>So, if you are still reading this, that means you are one of us. And, like a true <strong>Jedi</strong> we will forge a path with our light and fight the Dark-side. But wait, what should we use to defeat the <strong>Sith</strong>?</p>
 
-<p>The choices were many, and choosing a weapon meant, we had to <em>use it</em>. And we did, just that. Thank us later!</p>
+<p><img src="/assets/images/elastichadoop.png" alt="Elastic&amp;Hadoop"></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>image of elastic plus other technologies
-</code></pre></div></div>
+<p>The choices were many, and choosing a weapon meant, we had to <em>use it</em>. And we did, just that. Thank us later!</p>
 
 <h3 id="apache---bees-elephants-mahouts-and-friends">Apache - Bees, Elephants, Mahouts and Friends</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>image of apache stack
-</code></pre></div></div>
-
 <p>So, let’s start with the <em>Elephant</em> in the room, pun intended. The stack was in place, a team was managing it, it had all the bells and whistles. Would it be love at first sight? Maybe.</p>
+
+<p><img src="/assets/images/bigdatastack.png" alt="Apache Architecture"></p>
 
 <p>So, we had data that was parsed. A <code class="language-plaintext highlighter-rouge">json</code> structured stream of data (more on how we did this later). The integration was supposed to be a breeze, would it though?</p>
 
-<p>Kafka chugged down the data like a champ. Now, we needed to store this data</p>
+<p>Kafka chugged down the data like a champ. Now, we needed to store this data.</p>
+
+<p>Since data is already in json format we decided to user No-SQL database to store the data assuming that it will be schemaless and we don’t have to define anything before we start storing the data. But sooner, we realized, that is not the case. We still have to define data structure. Moreover We have to put effort in engineering so that data is equally distributed across data storage. Then we have to use a middle layer which makes No-SQL looks like SQL to simplify data ingestion. So we gave up on No-SQL storage and decided to use Hive since it is more established and was in use by other teams. But what we wanted to do is to use the data for anlytics and apperently hive was very slow for this task. So now we have to use Druid in order to 
+have analytics at speed and to visualize it with Superset. Next task was to take data from hive table and send it to Druid index where it will be aggregated before storing. One simple task of ingesting the data and visualizing it involved so many componants and intricacies.</p>
 
 <p>Kafka -&gt; HBase</p>
 
 <p>Challenges:</p>
+
 <ol>
   <li>Engg efforts</li>
   <li>Pheonix - Define a mapping -&gt; back to RDBMS?</li>
@@ -379,20 +379,13 @@
 
 <p>So we started with a humble architecture:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>image of initial architecture
-</code></pre></div></div>
+<p><img src="/assets/images/architecture.png" alt="VM Architecture"></p>
 
 <p>We were pleasantly surprised with how easy it was to get the stack up and running. The possibilities were endless and we were about to embark on a journey that would transform the way we monitored our security events.</p>
 
 <p>In the next section we will cover these humble beginnings step-by-step. Until next time.</p>
 
-<blockquote cite="http://www.worldwildlife.org/who/index.html">
-For 50 years, WWF has been protecting the future of nature.
-The world's leading conservation organization,
-WWF works in 100 countries and is supported by
-1.2 million members in the United States and
-close to 5 million globally.
-</blockquote>
+<p><strong>And, always remember</strong>:</p>
 
 <blockquote>
   <p>Within infinite myths lies the eternal truth</p>
@@ -416,21 +409,18 @@ close to 5 million globally.
 <div class="share-box">
 <h5>Share this:</h5>
 
-<a class="f" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/beginner's%20guide/2020/01/01/security-jedi-1.html" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><i class="fa fa-facebook-official fa"></i><span> 
+<a class="f" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-facebook-official fa"></i><span> 
 facebook</span></a>
 
-<a class="t" href="https://twitter.com/intent/tweet?text=Security Jedi - Chapter 1&url=http://localhost:4000/beginner's%20guide/2020/01/01/security-jedi-1.html" 
-onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter fa"></i><span>twitter</span></a>
+<a class="t" href="https://twitter.com/intent/tweet?text=Security%20Jedi:%20SIEM%20-%20Chapter%201&amp;url=http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter fa"></i><span>twitter</span></a>
         
-<a class="g" href="https://plus.google.com/share?url=http://localhost:4000/beginner's%20guide/2020/01/01/security-jedi-1.html" 
-onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><i class="fa fa-google-plus fa"></i><span>google</span></a>
+<a class="g" href="https://plus.google.com/share?url=http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-google-plus fa"></i><span>google</span></a>
         
-<a class="r" href="http://www.reddit.com/submit?url=http://localhost:4000/beginner's%20guide/2020/01/01/security-jedi-1.html" 
-onclick="window.open(this.href, 'mywin','left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" ><i class="fa fa-reddit fa"></i><span> reddit</span></a>
+<a class="r" href="http://www.reddit.com/submit?url=http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html" onclick="window.open(this.href, 'mywin','left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-reddit fa"></i><span> reddit</span></a>
 
-<a class="l" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/beginner's%20guide/2020/01/01/security-jedi-1.html&title=Security Jedi - Chapter 1&summary=" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><i class="fa fa-linkedin fa"></i><span>linkedin</span></a>
+<a class="l" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html&amp;title=Security%20Jedi:%20SIEM%20-%20Chapter%201&amp;summary=" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-linkedin fa"></i><span>linkedin</span></a>
 
-<a class="e" href="mailto:?subject=Security Jedi - Chapter 1&amp;body=Check out this site http://localhost:4000/beginner's%20guide/2020/01/01/security-jedi-1.html"><i class="fa fa-envelope fa"></i><span> email</span></a>                          
+<a class="e" href="mailto:?subject=Security%20Jedi:%20SIEM%20-%20Chapter%201&amp;body=Check%20out%20this%20site%20http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html"><i class="fa fa-envelope fa"></i><span> email</span></a>                          
 </div>
 
 
@@ -440,14 +430,14 @@ onclick="window.open(this.href, 'mywin','left=20,top=20,width=900,height=500,too
         <!-- Github icon -->
         <span class="my-span-icon">
           <a href="https://github.com/NerdSec" aria-label="NerdSec's GitHub" title="NerdSec's GitHub">
-            <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
           </a>
         </span>
 
         <!-- Twitter icon -->
         <span class="my-span-icon">
           <a href="https://twitter.com/" aria-label="NerdSec's Twitter" title="NerdSec's Twitter">
-            <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/></svg>
+            <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path></svg>
           </a>
         </span>
 
@@ -458,7 +448,7 @@ onclick="window.open(this.href, 'mywin','left=20,top=20,width=900,height=500,too
         
           <span class="my-span-icon">
             <a href="/about/" aria-label="Contact" title="Contact NerdSec">
-              <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .02c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.99 6.98l-6.99 5.666-6.991-5.666h13.981zm.01 10h-14v-8.505l7 5.673 7-5.672v8.504z"/></svg>
+              <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path d="M12 .02c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.99 6.98l-6.99 5.666-6.991-5.666h13.981zm.01 10h-14v-8.505l7 5.673 7-5.672v8.504z"></path></svg>
             </a>
           </span>
         

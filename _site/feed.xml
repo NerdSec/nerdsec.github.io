@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-30T06:27:55+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">NerdSec</title><subtitle>A blog covering Python, Data Science, Machine Learning, and Big Data.</subtitle><entry><title type="html">Security Jedi - Chapter 1</title><link href="http://localhost:4000/beginner's%20guide/2020/01/01/security-jedi-1.html" rel="alternate" type="text/html" title="Security Jedi - Chapter 1" /><published>2020-01-01T00:00:00+05:30</published><updated>2020-01-01T00:00:00+05:30</updated><id>http://localhost:4000/beginner's%20guide/2020/01/01/security-jedi-1</id><content type="html" xml:base="http://localhost:4000/beginner's%20guide/2020/01/01/security-jedi-1.html">&lt;h2 id=&quot;siem---hero-or-villain&quot;&gt;SIEM - Hero or Villain?&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-31T14:02:27+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">NerdSec</title><subtitle>A blog covering Python, Data Science, Machine Learning, and Big Data.</subtitle><entry><title type="html">Security Jedi: SIEM - Chapter 1</title><link href="http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html" rel="alternate" type="text/html" title="Security Jedi: SIEM - Chapter 1" /><published>2020-01-02T00:00:00+05:30</published><updated>2020-01-02T00:00:00+05:30</updated><id>http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1</id><content type="html" xml:base="http://localhost:4000/security%20jedi/2020/01/02/security-jedi-1.html">&lt;p&gt;In the previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it &lt;a href=&quot;https://google.com&quot;&gt;here&lt;/a&gt; before proceeding.&lt;/p&gt;
+
+&lt;h2 id=&quot;siem---hero-or-villain&quot;&gt;SIEM - Hero or Villain?&lt;/h2&gt;
 
 &lt;p&gt;For the past decade, &lt;strong&gt;SIEM&lt;/strong&gt; has been ruining the lives of many SOC Analysts. Just like &lt;strong&gt;Anakin Skywalker&lt;/strong&gt;, all &lt;strong&gt;SIEM&lt;/strong&gt; technologies started with good intentions. But how over time things have changed. A tool meant to ease the life of an Analyst has now turned out to be his life’s biggest bane.&lt;/p&gt;
 
@@ -31,8 +33,8 @@
 
 &lt;p&gt;Then came the oracle, use a big data stack to solve this problem. Some &lt;strong&gt;SIEM&lt;/strong&gt;, tried to jump on this band wagon and disguise themselves as a Big Data platform. Some tried to sell themself as an augmented solution sitting alongside your &lt;strong&gt;Big Data&lt;/strong&gt; stack. Some ignored it, hoping that you would forget about it and finally see the light (or darkness). While some platforms truly did make that switch or better still, were designed with those principles in mind.&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;insert big data image
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/bigdata.jpg&quot; alt=&quot;Apache Architecture&quot; /&gt;
+&lt;a style=&quot;background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &amp;quot;San Francisco&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Ubuntu, Roboto, Noto, &amp;quot;Segoe UI&amp;quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px&quot; href=&quot;https://unsplash.com/@ev?utm_medium=referral&amp;amp;utm_campaign=photographer-credit&amp;amp;utm_content=creditBadge&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;Download free do whatever you want high-resolution photos from ev&quot;&gt;&lt;span style=&quot;display:inline-block;padding:2px 3px&quot;&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; style=&quot;height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white&quot; viewBox=&quot;0 0 32 32&quot;&gt;&lt;title&gt;unsplash-logo&lt;/title&gt;&lt;path d=&quot;M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/span&gt;&lt;span style=&quot;display:inline-block;padding:2px 3px&quot;&gt;ev&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;pretenders-and-survivors&quot;&gt;Pretenders and Survivors&lt;/h3&gt;
 
@@ -42,25 +44,27 @@
 
 &lt;p&gt;So, if you are still reading this, that means you are one of us. And, like a true &lt;strong&gt;Jedi&lt;/strong&gt; we will forge a path with our light and fight the Dark-side. But wait, what should we use to defeat the &lt;strong&gt;Sith&lt;/strong&gt;?&lt;/p&gt;
 
-&lt;p&gt;The choices were many, and choosing a weapon meant, we had to &lt;em&gt;use it&lt;/em&gt;. And we did, just that. Thank us later!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/elastichadoop.png&quot; alt=&quot;Elastic&amp;amp;Hadoop&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;image of elastic plus other technologies
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The choices were many, and choosing a weapon meant, we had to &lt;em&gt;use it&lt;/em&gt;. And we did, just that. Thank us later!&lt;/p&gt;
 
 &lt;h3 id=&quot;apache---bees-elephants-mahouts-and-friends&quot;&gt;Apache - Bees, Elephants, Mahouts and Friends&lt;/h3&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;image of apache stack
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
 &lt;p&gt;So, let’s start with the &lt;em&gt;Elephant&lt;/em&gt; in the room, pun intended. The stack was in place, a team was managing it, it had all the bells and whistles. Would it be love at first sight? Maybe.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/bigdatastack.png&quot; alt=&quot;Apache Architecture&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;So, we had data that was parsed. A &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;json&lt;/code&gt; structured stream of data (more on how we did this later). The integration was supposed to be a breeze, would it though?&lt;/p&gt;
 
-&lt;p&gt;Kafka chugged down the data like a champ. Now, we needed to store this data&lt;/p&gt;
+&lt;p&gt;Kafka chugged down the data like a champ. Now, we needed to store this data.&lt;/p&gt;
+
+&lt;p&gt;Since data is already in json format we decided to user No-SQL database to store the data assuming that it will be schemaless and we don’t have to define anything before we start storing the data. But sooner, we realized, that is not the case. We still have to define data structure. Moreover We have to put effort in engineering so that data is equally distributed across data storage. Then we have to use a middle layer which makes No-SQL looks like SQL to simplify data ingestion. So we gave up on No-SQL storage and decided to use Hive since it is more established and was in use by other teams. But what we wanted to do is to use the data for anlytics and apperently hive was very slow for this task. So now we have to use Druid in order to 
+have analytics at speed and to visualize it with Superset. Next task was to take data from hive table and send it to Druid index where it will be aggregated before storing. One simple task of ingesting the data and visualizing it involved so many componants and intricacies.&lt;/p&gt;
 
 &lt;p&gt;Kafka -&amp;gt; HBase&lt;/p&gt;
 
 &lt;p&gt;Challenges:&lt;/p&gt;
+
 &lt;ol&gt;
   &lt;li&gt;Engg efforts&lt;/li&gt;
   &lt;li&gt;Pheonix - Define a mapping -&amp;gt; back to RDBMS?&lt;/li&gt;
@@ -106,20 +110,13 @@
 
 &lt;p&gt;So we started with a humble architecture:&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;image of initial architecture
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/architecture.png&quot; alt=&quot;VM Architecture&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We were pleasantly surprised with how easy it was to get the stack up and running. The possibilities were endless and we were about to embark on a journey that would transform the way we monitored our security events.&lt;/p&gt;
 
 &lt;p&gt;In the next section we will cover these humble beginnings step-by-step. Until next time.&lt;/p&gt;
 
-&lt;blockquote cite=&quot;http://www.worldwildlife.org/who/index.html&quot;&gt;
-For 50 years, WWF has been protecting the future of nature.
-The world's leading conservation organization,
-WWF works in 100 countries and is supported by
-1.2 million members in the United States and
-close to 5 million globally.
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;And, always remember&lt;/strong&gt;:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Within infinite myths lies the eternal truth&lt;/p&gt;
@@ -133,7 +130,67 @@ close to 5 million globally.
   &lt;p&gt;You and I, only two.&lt;/p&gt;
 
   &lt;p&gt;-Devdutt Patnaik&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name></name></author><category term="Big" /><category term="Data" /><summary type="html">SIEM - Hero or Villain?</summary></entry><entry><title type="html">Pandas Introduction</title><link href="http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html" rel="alternate" type="text/html" title="Pandas Introduction" /><published>2019-05-05T00:00:00+05:30</published><updated>2019-05-05T00:00:00+05:30</updated><id>http://localhost:4000/data%20science/2019/05/05/pandas-introduction</id><content type="html" xml:base="http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html">&lt;p&gt;In this post, we will try to get a basic idea about what exactly is pandas, and how we can use this library to grapple with data efficiently:&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><category term="Big Data" /><summary type="html">In the previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it here before proceeding.</summary></entry><entry><title type="html">Security Jedi - Introduction</title><link href="http://localhost:4000/security%20jedi/2020/01/01/security-jedi-introduction.html" rel="alternate" type="text/html" title="Security Jedi - Introduction" /><published>2020-01-01T00:00:00+05:30</published><updated>2020-01-01T00:00:00+05:30</updated><id>http://localhost:4000/security%20jedi/2020/01/01/security-jedi-introduction</id><content type="html" xml:base="http://localhost:4000/security%20jedi/2020/01/01/security-jedi-introduction.html">&lt;p&gt;Security is an ever evolving field, where the threats and its detection mechanisms are ever evolving. In such a field the pressure on the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Blue Team&lt;/code&gt; is far greater than that on the adversary. For, as a defender, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Blue Team&lt;/code&gt; has to always get it right; while the adversary has to get it right just once!&lt;/p&gt;
+
+&lt;h2 id=&quot;problems-compounded&quot;&gt;Problems Compounded&lt;/h2&gt;
+
+&lt;p&gt;In such a scenario, a defender needs to make his job as simple and fast as he can. Traditionally, in a SOC environment the detection responsibilities have fallen on the shoulders of the good ol’ &lt;strong&gt;SIEM&lt;/strong&gt;. But they typically have limitations surrounding:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Scalability&lt;/li&gt;
+  &lt;li&gt;Search&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;scalability&quot;&gt;Scalability&lt;/h3&gt;
+
+&lt;p&gt;As the volume of data gets larger the robustness of a platform built on a custom DB or a traditional RDBMS takes a hit. Plus it gets really expensive to buy special appliances or pay for an additional license to handle that extra data.&lt;/p&gt;
+
+&lt;h3 id=&quot;search&quot;&gt;Search&lt;/h3&gt;
+
+&lt;p&gt;The dreaded &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Search&lt;/code&gt; functionality is an eye sore for most &lt;strong&gt;SIEM&lt;/strong&gt; products on the market today. You either have to learn a custom query language or rely on columnar search approach, which should be fine, if implemented correctly. Alas, it isn’t (in our expereience)!&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, most of this &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Search&lt;/code&gt; functionality is monolithic and feels quite limiting as an analyst. This is especially true when you just have to run a quick raw text search.&lt;/p&gt;
+
+&lt;h2 id=&quot;problems-solved&quot;&gt;Problems Solved&lt;/h2&gt;
+
+&lt;p&gt;Having experienced these problems first hand, we decided to do something about it. We realized that what did work for us, in a traditional SOC, will no longer work for us in the future. We needed a platform that would empower the Analyst to start with a blank canvas and then paint his picture with ease. We needed to empower the analyst to be able to do &lt;em&gt;analytics&lt;/em&gt;. Having learned from our SIEM experience, we sat down and chalked down our fundamental &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Design Principles&lt;/code&gt;. Our new &lt;em&gt;&lt;strong&gt;Cyber Security Analytics&lt;/strong&gt;&lt;/em&gt; platform would adhere to these principles and hopefully overcome our &lt;strong&gt;SIEM&lt;/strong&gt; shortcomings.&lt;/p&gt;
+
+&lt;h3 id=&quot;design-priciples&quot;&gt;Design Priciples&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open Source - Community driven&lt;/li&gt;
+  &lt;li&gt;Strong REST API&lt;/li&gt;
+  &lt;li&gt;Scalable&lt;/li&gt;
+  &lt;li&gt;Search - Fast query execution&lt;/li&gt;
+  &lt;li&gt;Intuitive&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;a-long-journey&quot;&gt;A Long Journey&lt;/h2&gt;
+
+&lt;p&gt;It is one thing to decide to build our own &lt;strong&gt;Cyber Security Analytics&lt;/strong&gt; platform, and another to actually do it. The biggest challenge that we faced was identifying the technology around which we would build this stack.&lt;/p&gt;
+
+&lt;p&gt;This blog is a series of posts that covers this journey. It is a highly subjective reflection of our thoughts and ideas and in no way reflects any other entity or organization. We hope that this series turns out to be of some help to someone who wants to emulate this journey or some portion of it. In the next blog we will cover the humble beginnings of our stack and why we chose it.&lt;/p&gt;
+
+&lt;h2 id=&quot;security-jedi-series&quot;&gt;Security Jedi Series&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/security jedi/2020/01/02/security-jedi-1.html&quot;&gt;Chapter 1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;And, always remember&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Within infinite myths lies the eternal truth&lt;/p&gt;
+
+  &lt;p&gt;Who sees it all?&lt;/p&gt;
+
+  &lt;p&gt;Varuna has but a thousand eyes,&lt;/p&gt;
+
+  &lt;p&gt;Indra has a hundred,&lt;/p&gt;
+
+  &lt;p&gt;You and I, only two.&lt;/p&gt;
+
+  &lt;p&gt;-Devdutt Patnaik&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><category term="Big Data" /><category term="SIEM" /><summary type="html">Security is an ever evolving field, where the threats and its detection mechanisms are ever evolving. In such a field the pressure on the Blue Team is far greater than that on the adversary. For, as a defender, the Blue Team has to always get it right; while the adversary has to get it right just once!</summary></entry><entry><title type="html">Pandas Introduction</title><link href="http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html" rel="alternate" type="text/html" title="Pandas Introduction" /><published>2019-05-05T00:00:00+05:30</published><updated>2019-05-05T00:00:00+05:30</updated><id>http://localhost:4000/data%20science/2019/05/05/pandas-introduction</id><content type="html" xml:base="http://localhost:4000/data%20science/2019/05/05/pandas-introduction.html">&lt;p&gt;In this post, we will try to get a basic idea about what exactly is pandas, and how we can use this library to grapple with data efficiently:&lt;/p&gt;
 
 &lt;p&gt;Pandas is a library that allows you to perform data analysis with ease and great performance at the same time.
 We will try to touch on two basic concepts of pandas.&lt;/p&gt;
