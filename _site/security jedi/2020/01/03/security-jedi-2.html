@@ -116,7 +116,7 @@
 
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/assets/css/style.css?v=7094570e0df6d6371303c0f4a6f3984e1a56ed61">
+    <link rel="stylesheet" href="/assets/css/style.css?v=3deab332302d8a5071bfb9221e8653a7da503d14">
   </head>
   <body>
 
@@ -144,13 +144,13 @@
 
     
       <nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
         <label for="nav-trigger">
           <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
             </svg>
           </span>
         </label>
@@ -227,7 +227,7 @@
 
       
       
-        <a href="/categories/#Security Jedi" class="btn">Security Jedi</a>
+        <a href="/categories/#Security%20Jedi" class="btn">Security Jedi</a>
       
       
 
@@ -268,16 +268,16 @@
   
   <h4>Tags:</h4>
   
-  <a href="/tags/#Big Data" class="btn">Big Data</a>
-  &nbsp;
+  <a href="/tags/#Big%20Data" class="btn">Big Data</a>
+   
   
-  <a href="/tags/#Vulnerability Management" class="btn">Vulnerability Management</a>
+  <a href="/tags/#Vulnerability%20Management" class="btn">Vulnerability Management</a>
   
   
 </div>
 
   <div itemprop="articleBody">
-    <p>In a previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it <a href="/security jedi/2020/01/01/security-jedi-introduction.html">here</a> before proceeding.</p>
+    <p>In a previous blog we have covered the motivation for starting this series. In case, you haven’t read it yet, I urge you to first read it <a href="/security%20jedi/2020/01/01/security-jedi-introduction.html">here</a> before proceeding.</p>
 
 <p>Today, we will cover the origins of our <strong>Cyber Security Analytics</strong> platform. The first use case for implementing this stack was actually quite different. Vulnerability Management.</p>
 
@@ -291,7 +291,7 @@
 
 <p>We started with a quite simple architecture. We used the native <a href="https://docs.tenable.com/sccv/Content/PublishingSitesSettings.htm">report publishing</a> feature present in Tenable. This allowed us to send the Vulnerability data over <code class="language-plaintext highlighter-rouge">https</code> to a webserver.</p>
 
-<p><img src="/assets/images/architecture.png" alt="VM Architecture" /></p>
+<p><img src="/assets/images/architecture.png" alt="VM Architecture"></p>
 
 <p>We then used Logstash <a href="https://www.elastic.co/guide/en/logstash/current/plugins-inputs-http.html">http input</a>, to receive this data and then forward it to Elasticsearch. Then it was a simple matter of visualizing the data in Kibana and showing it to the world (just kidding).</p>
 
@@ -323,9 +323,135 @@
 
 <p>We then consume these <code class="language-plaintext highlighter-rouge">csv</code> files using scheduled python jobs. We implemented <code class="language-plaintext highlighter-rouge">Django Celery</code> to do this in our production, but this is a topic for some other blog in itself. For now, let’s assume it was a cron job that ran every <code class="language-plaintext highlighter-rouge">5 minutes</code>.</p>
 
-<h3 id="data-processing">Data Processing</h3>
+<h3 id="data-pre-processing">Data Pre-processing</h3>
 
 <p>Now that we have the csv files in a folder, we can start by listing the files and processing them.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">VM_fileprocess</span><span class="p">():</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s">'/path/to/vm/*.log'</span><span class="p">)</span>
+    <span class="n">files_processed</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="c1"># Check if logstash has written the data to the file
+</span>        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span><span class="o">.</span><span class="n">st_size</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">fr</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
+            <span class="n">lines</span> <span class="o">=</span> <span class="n">fr</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+            <span class="n">fr</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="c1"># Drop the metadata added by logstash
+</span>            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'"Plugin","Plugin Name"'</span><span class="p">)</span><span class="o">!=-</span><span class="mi">1</span><span class="p">:</span>
+                    <span class="k">break</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+            <span class="c1"># Write the data to a new file
+</span>            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">):</span>
+                <span class="n">fw</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'.'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s">'.csv'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span>
+                <span class="n">fw</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+                <span class="n">fw</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="n">files_processed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'.'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s">'.csv'</span><span class="p">)</span>
+            <span class="c1"># Either delete the original file or archive it
+</span>            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">pass</span>
+    <span class="k">return</span> <span class="n">files_processed</span>
+</code></pre></div></div>
+
+<p>The above code is quite straight-forward:</p>
+
+<ol>
+  <li>We list the files present in the <code class="language-plaintext highlighter-rouge">vm</code> directory.</li>
+  <li>We then iterate through them and check for the following:
+    <ul>
+      <li>File contains scan results received from Tenable SC.</li>
+      <li>Filter out the metadata added by <strong>Logstash</strong>.</li>
+      <li>Write the filtered data to a new file.</li>
+    </ul>
+  </li>
+  <li>Delete the old files and return a list of files processed.</li>
+</ol>
+
+<p>We need to do these steps to ensure that when we read the <code class="language-plaintext highlighter-rouge">csv</code> file in <code class="language-plaintext highlighter-rouge">python</code>, there are no garbage values.</p>
+
+<h3 id="data-processing">Data Processing</h3>
+
+<p>Once we have cleaned the <code class="language-plaintext highlighter-rouge">csv</code> or <code class="language-plaintext highlighter-rouge">log</code> files, we can start to enrich it and add some context to it. We will leverage the <code class="language-plaintext highlighter-rouge">pandas</code> library to enrich it.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">files_processed</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s">"NA"</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">'_index'</span><span class="p">]</span><span class="o">=</span> <span class="s">'vm-tenable'</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">'@timestamp'</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="c1"># Rename the columns - ECS - https://www.elastic.co/guide/en/ecs/current/index.html
+</span>    <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s">"Plugin"</span><span class="p">:</span><span class="s">"process.pid"</span><span class="p">,</span><span class="s">"Plugin Name"</span><span class="p">:</span><span class="s">"process.name"</span><span class="p">,</span><span class="s">"Family"</span><span class="p">:</span><span class="s">"os.family"</span><span class="p">,</span><span class="s">"Severity"</span><span class="p">:</span><span class="s">"event.criticality"</span><span class="p">,</span><span class="s">"IP Address"</span><span class="p">:</span><span class="s">"server.address"</span><span class="p">,</span><span class="s">"Protocol"</span><span class="p">:</span><span class="s">"network.protocol"</span><span class="p">,</span><span class="s">"Port"</span><span class="p">:</span><span class="s">"server.port"</span><span class="p">,</span><span class="s">"Exploit?"</span><span class="p">:</span><span class="s">"vulnerability.exploit.available"</span><span class="p">,</span><span class="s">"MAC Address"</span><span class="p">:</span><span class="s">"server.mac"</span><span class="p">,</span><span class="s">"DNS Name"</span><span class="p">:</span><span class="s">"host.hostname"</span><span class="p">,</span><span class="s">"NetBIOS Name"</span><span class="p">:</span><span class="s">"host.name"</span><span class="p">,</span><span class="s">"Plugin Text"</span><span class="p">:</span><span class="s">"event.description"</span><span class="p">,</span><span class="s">"Solution"</span><span class="p">:</span><span class="s">"vulnerability.solution"</span><span class="p">,</span><span class="s">"Risk Factor"</span><span class="p">:</span><span class="s">"risk_factor"</span><span class="p">,</span><span class="s">"CVE"</span><span class="p">:</span><span class="s">"vulnerability.cve"</span><span class="p">,</span><span class="s">"First Discovered"</span><span class="p">:</span><span class="s">"event.start"</span><span class="p">,</span><span class="s">"Last Observed"</span><span class="p">:</span><span class="s">"event.end"</span><span class="p">,</span><span class="s">"Vuln Publication Date"</span><span class="p">:</span><span class="s">"vulnerability.pubdate"</span><span class="p">,</span><span class="s">"Patch Publication Date"</span><span class="p">:</span><span class="s">"vulnerability.patchdate"</span><span class="p">,</span><span class="s">"Exploit Frameworks"</span><span class="p">:</span><span class="s">"vulnerability.exploit.name"</span><span class="p">,</span><span class="s">"Version"</span><span class="p">:</span><span class="s">"Version"</span><span class="p">,</span><span class="s">"_index"</span><span class="p">:</span><span class="s">"_index"</span><span class="p">,</span><span class="s">"_type"</span><span class="p">:</span><span class="s">"_type"</span><span class="p">,</span><span class="s">"@timestamp"</span><span class="p">:</span><span class="s">"@timestamp"</span><span class="p">},</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="p">{</span><span class="s">"event.description"</span><span class="p">:</span><span class="s">"NA"</span><span class="p">},</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>We begin by iterating through the <code class="language-plaintext highlighter-rouge">processed_files</code> list and create respective <code class="language-plaintext highlighter-rouge">pandas DataFrames</code> to be indexed to Elasticsearch. We add a timestamp column to the <code class="language-plaintext highlighter-rouge">DataFrame</code> to associate a <code class="language-plaintext highlighter-rouge">timestamp</code> with the VM data, and then rename the columns to conform to ECS.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">....</span>
+    <span class="c1"># Check for credentialized scans
+</span>    <span class="n">df</span><span class="p">[</span><span class="s">"event.credentials"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">"event.description"</span><span class="p">]</span><span class="o">.</span><span class="nb">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s">"Credentialed checks : yes"</span><span class="p">)</span>
+    <span class="n">df_creds</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s">"event.credentials"</span><span class="p">]</span><span class="o">==</span><span class="bp">True</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s">"process.pid"</span><span class="p">]</span><span class="o">==</span><span class="mi">19506</span><span class="p">)][[</span><span class="s">"server.address"</span><span class="p">,</span><span class="s">"event.credentials"</span><span class="p">]]</span>
+    <span class="c1"># Drop the columns and merge on credential check = yes
+</span>    <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s">"event.credentials"</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_creds</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s">"server.address"</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s">"left"</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="p">{</span><span class="s">"event.credentials"</span><span class="p">:</span><span class="bp">False</span><span class="p">},</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>We then check if the scans were performed using proper credentials. This ensures that the vulnerability data is more accurate and contains detailed vulnerability details.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">....</span>
+    <span class="n">arr_av</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">arr_wazuh</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">unique_ip</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">"server.address"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="c1"># Enrich with information about the agents installed on the servers
+</span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">unique_ip</span><span class="p">:</span>
+        <span class="n">query</span> <span class="k">for</span> <span class="n">av</span> <span class="n">information</span>
+        <span class="n">query</span> <span class="k">for</span> <span class="n">wazuh</span><span class="o">/</span><span class="n">hids</span> <span class="n">information</span>
+        <span class="n">query</span> <span class="k">for</span> <span class="n">other</span> <span class="n">agent</span> <span class="n">information</span>
+    <span class="n">df_av</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">arr_av</span><span class="p">)</span>
+    <span class="n">df_wazuh</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">arr_wazuh</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">df_av</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s">"server.address"</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s">"left"</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">df_wazuh</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s">"server.address"</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s">"left"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>We then query for information on the AV or HIDS agents on all our machines in scope. Depending on your environment, this information can be pulled from either a DB, API, or an ES index.</p>
+
+<p>Although optional, this step should not be skipped as it can help you later on to prioritize your remediation priorities and also gives you more context on the the overall health of your environment.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">inventoryusr</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'/run/secrets/invusr'</span><span class="p">)</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">inventorypw</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'/run/secrets/invpw'</span><span class="p">)</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">pymssql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s">"10.x.x.x"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">3306</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">invusr</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">invpw</span><span class="p">,</span><span class="n">database</span><span class="o">=</span><span class="s">"Inventory"</span><span class="p">)</span>
+    <span class="n">stmt</span> <span class="o">=</span> <span class="s">"SELECT IP, Owner, ..., FROM Table_Name"</span>
+    <span class="n">df_vmdb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">stmt</span><span class="p">,</span><span class="n">conn</span><span class="p">)</span>
+    <span class="n">df_vmdb</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="n">Columns</span> <span class="n">to</span> <span class="n">be</span> <span class="n">renamed</span><span class="p">},</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">df_vmdb</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s">'src.ip'</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">'left'</span><span class="p">)</span>
+    <span class="n">es</span> <span class="o">=</span> <span class="n">Elasticsearch</span><span class="p">(</span><span class="s">'cluster information'</span><span class="p">)</span>
+    <span class="n">helpers</span><span class="o">.</span><span class="n">bulk</span><span class="p">(</span><span class="n">es</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s">'records'</span><span class="p">))</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>And finally, we add the business context to this information. This is the most crucial aspect of the entire exercise. Adding this allows you to visualize your risk based on either the business type or department; whatever is the requirement.</p>
+
+<p>We can also take this a step further by automating the compliance based on a few simple checks, such as the number of open <code class="language-plaintext highlighter-rouge">Critical</code> or <code class="language-plaintext highlighter-rouge">High</code> vulnerabilities.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Get a unique list of all IP having either [Critical, High, or Medium vulnerability].
+</span><span class="n">iplist</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'event.severity'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s">'Critical'</span><span class="p">,</span><span class="s">'High'</span><span class="p">,</span><span class="s">'Medium'</span><span class="p">])][</span><span class="s">'ip'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">df_noncomplied</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">iplist</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">'src.ip'</span><span class="p">])</span>
+<span class="c1"># Create a DataFrame and add status of all IP as Non Complied
+</span><span class="n">df_noncomplied</span><span class="p">[</span><span class="s">'status'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'Non Complied'</span>
+<span class="c1"># Merge with existing data
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">df_noncomplied</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s">'src.ip'</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">'left'</span><span class="p">)</span>
+<span class="c1"># For data not found in the Non Complied dataframe, mark the status as complied.
+</span><span class="n">df</span><span class="p">[</span><span class="s">'status'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s">'Complied'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Congratulations, you have now automated your entire Vulnerability Management process! No, not really. You still have a herculean task of actually closing all these vulnerabilities/issues. But, now you are in a better position to do it, with a better context.</p>
+
+<h2 id="kibana-magic">Kibana Magic</h2>
+
+<p>Till now, we have covered only the boring theory. Time to see the fruits of our labour!</p>
 
 <p><strong>And, always remember</strong>:</p>
 
@@ -351,21 +477,18 @@
 <div class="share-box">
 <h5>Share this:</h5>
 
-<a class="f" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2.html" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><i class="fa fa-facebook-official fa"></i><span> 
+<a class="f" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2.html" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-facebook-official fa"></i><span> 
 facebook</span></a>
 
-<a class="t" href="https://twitter.com/intent/tweet?text=Security Jedi - Chapter 2: Vulnerability Management&url=http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2.html" 
-onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter fa"></i><span>twitter</span></a>
+<a class="t" href="https://twitter.com/intent/tweet?text=Security%20Jedi%20-%20Chapter%202:%20Vulnerability%20Management&amp;url=http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2.html" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter fa"></i><span>twitter</span></a>
         
-<a class="g" href="https://plus.google.com/share?url=http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2.html" 
-onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><i class="fa fa-google-plus fa"></i><span>google</span></a>
+<a class="g" href="https://plus.google.com/share?url=http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2.html" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-google-plus fa"></i><span>google</span></a>
         
-<a class="r" href="http://www.reddit.com/submit?url=http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2.html" 
-onclick="window.open(this.href, 'mywin','left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" ><i class="fa fa-reddit fa"></i><span> reddit</span></a>
+<a class="r" href="http://www.reddit.com/submit?url=http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2.html" onclick="window.open(this.href, 'mywin','left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-reddit fa"></i><span> reddit</span></a>
 
-<a class="l" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2.html&title=Security Jedi - Chapter 2: Vulnerability Management&summary=" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><i class="fa fa-linkedin fa"></i><span>linkedin</span></a>
+<a class="l" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2.html&amp;title=Security%20Jedi%20-%20Chapter%202:%20Vulnerability%20Management&amp;summary=" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-linkedin fa"></i><span>linkedin</span></a>
 
-<a class="e" href="mailto:?subject=Security Jedi - Chapter 2: Vulnerability Management&amp;body=Check out this site http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2.html"><i class="fa fa-envelope fa"></i><span> email</span></a>                          
+<a class="e" href="mailto:?subject=Security%20Jedi%20-%20Chapter%202:%20Vulnerability%20Management&amp;body=Check%20out%20this%20site%20http://localhost:4000/security%20jedi/2020/01/03/security-jedi-2.html"><i class="fa fa-envelope fa"></i><span> email</span></a>                          
 </div>
 
 
@@ -375,14 +498,14 @@ onclick="window.open(this.href, 'mywin','left=20,top=20,width=900,height=500,too
         <!-- Github icon -->
         <span class="my-span-icon">
           <a href="https://github.com/NerdSec" aria-label="NerdSec's GitHub" title="NerdSec's GitHub">
-            <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
           </a>
         </span>
 
         <!-- Twitter icon -->
         <span class="my-span-icon">
           <a href="https://twitter.com/" aria-label="NerdSec's Twitter" title="NerdSec's Twitter">
-            <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/></svg>
+            <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path></svg>
           </a>
         </span>
 
@@ -393,7 +516,7 @@ onclick="window.open(this.href, 'mywin','left=20,top=20,width=900,height=500,too
         
           <span class="my-span-icon">
             <a href="/about/" aria-label="Contact" title="Contact NerdSec">
-              <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .02c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.99 6.98l-6.99 5.666-6.991-5.666h13.981zm.01 10h-14v-8.505l7 5.673 7-5.672v8.504z"/></svg>
+              <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path d="M12 .02c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.99 6.98l-6.99 5.666-6.991-5.666h13.981zm.01 10h-14v-8.505l7 5.673 7-5.672v8.504z"></path></svg>
             </a>
           </span>
         

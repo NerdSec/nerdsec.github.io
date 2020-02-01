@@ -2,7 +2,7 @@
 layout: post
 title: "Security Jedi - Chapter 1: SIEM"
 categories: ["Security Jedi"]
-tags: ["Big Data"]
+tags: ["Big Data", "SIEM"]
 author: Nachiket Vartak & Darshan Parab
 ---
 
